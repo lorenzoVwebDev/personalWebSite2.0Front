@@ -1,0 +1,14 @@
+{"compilerOptions": {
+  "baseUrl": ".",
+  "paths": {
+      "@/*": ["./src/*"],
+      "@/common": ["./src/App/common"]
+    }
+  
+},
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}

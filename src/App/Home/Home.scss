@@ -1,0 +1,11 @@
+@use '../../style/mixin' as *;
+
+.home-container {
+  background-image: url("http://localhost:3000/images/home-page-personal.jpg");
+  background-size: 100%;
+  width: 100%;
+  min-height: 80vh;
+  & .home-presentation-section {
+    color: white;
+  }
+}
