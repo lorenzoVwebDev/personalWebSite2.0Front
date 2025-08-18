@@ -1,4 +1,6 @@
 import { Link } from 'react-router';
+//services
+import downloadResume from '@services/downloadResume'
 //types
 import { type SocialObject } from '../../../../types/types';
 import './InfoSocials.scss';

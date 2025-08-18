@@ -1,6 +1,5 @@
 import InfoSocials from './InfoSocials/InfoSocials';
 //env
-import { devApi } from '../../utils/envVariables';
 import './HomePresentation.scss';
 
 function HomePresentation() {
@@ -26,7 +25,7 @@ function HomePresentation() {
             <InfoSocials/>
           </div>
           <div className="home-presentation-section-right">
-            <img src={`${devApi}images/home-background.png`} alt="" />
+            <img src={`${import.meta.env.VITE_DEV_API}images/home-background.png`} alt="" />
           </div>
         </section>
 }

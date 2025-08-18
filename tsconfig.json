@@ -1,8 +1,9 @@
 {"compilerOptions": {
   "baseUrl": ".",
   "paths": {
-      "@/*": ["./src/*"],
-      "@/common": ["./src/App/common"]
+      "@*": ["./src/*"],
+      "@common": ["./src/App/common"],
+      "@services": ["./src/App/services"]
     }
   
 },
