@@ -3,7 +3,9 @@
   "paths": {
       "@*": ["./src/*"],
       "@common": ["./src/App/common"],
-      "@services": ["./src/App/services"]
+      "@services": ["./src/App/services"],
+      "@types": ["./src/types"],
+      "@hooks": ["./src/App/Hooks"],
     }
   
 },

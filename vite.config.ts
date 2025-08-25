@@ -9,6 +9,8 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
       "@common": path.resolve(__dirname, "./src/App/common"),
       "@services": path.resolve(__dirname, "./src/App/services"),
+      "@types": path.resolve(__dirname, "./src/types"),
+      "@hooks": path.resolve(__dirname, "./src/App/Hooks"),
     }
   }
 })

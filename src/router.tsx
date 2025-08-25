@@ -5,6 +5,7 @@ import MainPortfolio from "./App/MainPorfolio/MainPortfolio";
 import MusicPortfolio from "./App/MainPorfolio/MusicPortfolio/MusicPortfolio";
 import DevPortfolio from "./App/MainPorfolio/DevPortfolio/DevPortfolio";
 import Contacts from "./App/Contacts/Contacts";
+import AboutMe from "./App/AboutMe/AboutMe";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,9 @@ const router = createBrowserRouter([
       }, {
         path: '/contacts',
         Component: Contacts
+      }, {
+        path: '/aboutme',
+        Component: AboutMe
       }
     ]
   }

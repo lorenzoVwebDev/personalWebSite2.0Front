@@ -1,4 +1,6 @@
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
+//components
+import NeonButton from '@common/NeonButton/NeonButton';
 //services
 import downloadResume from '@services/downloadResume'
 //types
@@ -21,10 +23,21 @@ const SocialsArray: SocialObject[] = [{
 
 function InfoSocials() {
 
+  const navigate = useNavigate()
+
   const downloadCv = (
     <div className="btn-box">
-      <button className="btn" onClick={() => downloadResume()}>Download Resume</button>
-      <Link to="/contacts" className="btn">Hire Me Now</Link>
+      <NeonButton
+        action={downloadResume}
+        buttonText={'Download Resume'}
+        classString={'btn'}
+      />
+      <NeonButton
+        action={navigate}
+        actionParameters={'/contacts'}
+        buttonText={'Hire Me Now'}
+        classString={'btn2'}
+      />
     </div>
   )
 
