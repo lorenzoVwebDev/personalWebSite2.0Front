@@ -75,7 +75,8 @@ function ProjectsSection({portGallery}: PropTypes) {
   return (
     <section className='home-projects-section'>
       <div className="modulator"></div>
-            <div className="project-section-ctnr">
+      <div className="project-section-ctnr">
+      <h1 className="project-section-ctnr-header"><span>D</span>ev <span>P</span>ortfolio</h1>
       <NeonButton 
         action={navigate}
         actionParameters={'/portfolio/devport'}
@@ -110,6 +111,7 @@ function ProjectsSection({portGallery}: PropTypes) {
       </Carousel>
       }
       <div className="project-section-ctnr">
+      <h1 className="project-section-ctnr-header"><span>M</span>usic <span>P</span>ortfolio</h1>
       <NeonButton 
         action={navigate}
         actionParameters={'/portfolio/musicport'}
