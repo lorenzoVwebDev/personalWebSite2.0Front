@@ -6,6 +6,7 @@
       "@services": ["./src/App/services"],
       "@types": ["./src/types"],
       "@hooks": ["./src/App/Hooks"],
+      "@utils": ["./src/App/utils"]
     }
   
 },

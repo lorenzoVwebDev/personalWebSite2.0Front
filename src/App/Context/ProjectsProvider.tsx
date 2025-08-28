@@ -28,7 +28,7 @@ const ProjectsProvider = ({children}: ChildrenType) => {
         const json = await response.json()
         const data = JSON.stringify(json)
         localForage.setItem('projectsJson', data)
-        setProjects(json)
+         setProjects(json)
       } else {
         console.error(response)
       }

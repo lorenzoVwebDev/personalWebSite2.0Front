@@ -15,7 +15,7 @@ export type JobsType = {
 
 export type PortObject = {
     header: string,
-    image: string,
+    image64: string,
     description: string,
     href: string,
     type: "php" | "reactprojects" | "projects" | "node" | "excelpowerpoint" | "angular",
@@ -112,3 +112,10 @@ export type TrackType = {
   uri: string;
   is_local: boolean;
 };
+
+export type OutletContextType = {
+  musicPath: string,
+  devPath: string
+}
+
+

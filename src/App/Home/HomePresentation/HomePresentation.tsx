@@ -21,7 +21,7 @@ function HomePresentation() {
             <InfoSocials/>
           </div>
           <div className="home-presentation-section-right">
-            <img src={`${import.meta.env.VITE_DEV_API}images/home-background.png`} alt="" />
+            <img src={`${import.meta.env.VITE_DEV_API}images/home-background.png`} alt="home-background.png" fetchPriority="high"/>
           </div>
           </div>
         </section>

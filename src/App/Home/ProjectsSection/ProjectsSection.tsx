@@ -1,16 +1,14 @@
-import {useContext, useEffect, useState} from 'react'
+import {useEffect, useState} from 'react'
 import Carousel from 'react-multi-carousel';
-import { ProjectsContext } from '../../Context/ProjectsProvider';
-import { SpotifyAuthContext } from '../../Context/SpotifyAuthProvider';
 import useSpotifyAuth from '@hooks/useSpotifyAuth';
 //components
 import TrackComponent from './TrackComponent/TrackComponent';
 import NeonButton from '@common/NeonButton/NeonButton';
 import { useNavigate } from 'react-router';
-import { useIntersectionObserver } from "@uidotdev/usehooks";
 import './ProjectsSection.scss'
 import { type PortObject, type TrackType } from '@types/types';
-
+//utils
+import { createBlobObject } from '../../utils/blobParsing';
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -57,7 +55,7 @@ function ProjectsSection({portGallery}: PropTypes) {
     if (access_token) getSong()
   }, [access_token])
 
-  const createBlobObject = (base64String: string) => {
+/*   const createBlobObject = (base64String: string) => {
     try {
       const byteCharacters = atob(base64String);
       const byteNumbers = new Array(byteCharacters.length);
@@ -70,7 +68,7 @@ function ProjectsSection({portGallery}: PropTypes) {
       return blobUrl
     } catch (error) {
     }
-  }
+  } */
 
   return (
     <section className='home-projects-section'>
@@ -96,6 +94,8 @@ function ProjectsSection({portGallery}: PropTypes) {
         infinite={true}
       >
         {portGallery.map((project, index) => {
+
+        const blobObject = createBlobObject(project.image64)
         return (
         <div className="job" key={index} >
         <div className="job-about-ctnr">
@@ -103,7 +103,7 @@ function ProjectsSection({portGallery}: PropTypes) {
         </div>
 
         <div className="job-img-ctnr">
-            {createBlobObject(project.image64) && <img src={createBlobObject(project.image64)} alt={project.description}/>}
+            {blobObject && <img src={blobObject} alt={project.description}/>}
         </div>
       </div> 
         )
