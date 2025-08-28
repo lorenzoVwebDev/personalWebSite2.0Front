@@ -22,6 +22,7 @@
     @include ubuntu-regular;
     & span {
       font-size: calc(1.1vw + 1.1vh);
+      color: white;
     }
     & .social-icons-container {
       display: flex;

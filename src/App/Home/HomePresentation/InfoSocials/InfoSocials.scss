@@ -1,1 +1,132 @@
 @use '../../../../style/mixin' as *;
+
+.info-box {
+  & .work-contacts {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem 1rem 1rem;
+    & .email-info {
+      & h5 {
+        color: $hover-color;
+      }
+
+      & h6 {
+        font-size: 1rem;
+      }
+    }
+
+    & .linkedin-info {
+      & h5 {
+        color: $hover-color;
+      }
+
+      & a {
+        text-decoration: none;
+        color: white;
+        font-size: 1rem;
+        font-weight: 700;
+      }
+    }
+  }
+  & .btn-box {
+      display: flex;
+      justify-content: space-between;
+      height: 3rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+/*     & .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      background-color: $hover-color;
+      color: $bg-color;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      font-weight: 600;
+      transition: .6s;
+      box-shadow: $neon-box-shadow;
+      border-radius: 5px;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      border: 2px solid $hover-color;
+      cursor: pointer;
+      &:hover {
+        color: $hover-color;
+        &:before {
+          width: 100%;
+        }
+      }
+      &:nth-child(2) {
+        background: $bg-color;
+        color: $hover-color;
+        &:before {
+          background-color: $hover-color;
+        }
+        &:hover {
+          color: $bg-color;
+        }
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $bg-color;
+        width: 0;
+        height: 100%;
+        z-index: -1;
+        transition: .4s;
+      }
+    } */
+  }
+
+
+  & .social-icons {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    width: 180px;
+    height: 30px;
+    & a {
+      display: inline-flex;
+      width: 30px;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      background-color: $bg-color;
+      color: $hover-color;
+      border: 2px solid $hover-color;
+      border-radius: 5px;
+      box-shadow:  1 1 10rem #12f7ff;
+      position: relative;
+      z-index: 1;
+      &:hover {
+        color: $bg-color;
+        &:before {
+          width: 100%;
+        }
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: $hover-color;
+        width: 0;
+        height: 100%;
+        z-index: -1;
+        transition: 0.4s;
+      }
+      & i {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

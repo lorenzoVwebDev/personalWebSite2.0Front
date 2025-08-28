@@ -2,18 +2,38 @@
 
 .home-presentation-section {
   display: flex;
+  flex-direction: column;
   padding: 3rem;
   gap: 0.5rem;
-  & .home-presentation-section-left {
+  background-image: url("http://localhost:3000/images/home-page-personal.jpg");
+  background-size: 100%;
+  & h1 {
+    text-align: center;
+    font-size: 3rem;
+    & span {
+      color: $hover-color;
+    }
+  }
+  & .home-presentation-content {
+      display: flex;
+      padding: 3rem;
+      gap: 0.5rem;
+    & .home-presentation-section-left {
     flex: 1;
+    & .home-presentation-synopsis {
+      padding: 1rem 1rem 1rem 1rem;
+    }
   }
   & .home-presentation-section-right {
     flex: 1;
     border: solid 1px rgb(88, 88, 88);
     border-radius: 15px;
     overflow: hidden;
+    opacity: 0.7;
     & img {
       width: 100%;
     }
   }
+  }
+
 }

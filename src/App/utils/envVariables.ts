@@ -1,1 +1,0 @@
-export const devApi = import.meta.env.VITE_DEV_API

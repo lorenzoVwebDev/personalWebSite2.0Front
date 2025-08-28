@@ -1,0 +1,15 @@
+.backlinks-component-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0rem 0rem 1rem;
+  & .backlink-container {
+    color: white;
+    & a {
+      font-size: 1rem;
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
