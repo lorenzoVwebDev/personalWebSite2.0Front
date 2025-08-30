@@ -1,18 +1,22 @@
 import type { ReactElement } from 'react';
+import { type NavigateFunction } from 'react-router';
 import './NeonButton.scss'
 
 type PropTypes = {
-  action: (arg?: any) => {},
+  action:  Function,
   actionParameters: any
   ,
   buttonText: string,
   classString: string,
-  children?: ReactElement
+  children?: ReactElement,
+  type?: string,
+  style: any
 }
 
-function NeonButton({action, buttonText, classString, actionParameters, children}: PropTypes): ReactElement {
+function NeonButton({action, buttonText, classString, actionParameters, children, type, style}: PropTypes): ReactElement {
+
   return (
-    <button className={classString} onClick={() => action(actionParameters)}>{children ? children : buttonText}</button>
+    <button className={classString} onClick={() => action(actionParameters)} style={style}>{children ? children : buttonText}</button>
   )
 }
 

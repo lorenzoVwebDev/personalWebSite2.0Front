@@ -26,7 +26,7 @@ function useSearchFilters(projectsArray: PortObject[]) {
       let newProjectsArray: PortObject[] = projectsArray.filter(project => {
         return (project.header.toLowerCase().includes(action.text.toLowerCase()) || project.description.toLowerCase().includes(action.text.toLowerCase()))
       })
-
+      console.log(newProjectsArray)
       return newProjectsArray
       break;
     }

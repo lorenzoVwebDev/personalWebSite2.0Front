@@ -15,18 +15,22 @@ import { type OutletContextType, type PortObject } from '@types/types'
 
 function DevPortfolio() {
   const [page, setPage] = useState(1);
+  const [totalPagesState, setTotalPages] = useState<number | undefined>(undefined)
+  const [isProjectsArray, setIsprojectsArray] = useState<boolean>(false)
   const searchBarRef = useRef(null)
   const optionFiltersRef = useRef(null)
   const {devPath} = useOutletContext<OutletContextType>()
   const OptionsArray = ['php', 'reactprojects', 'projects', 'node', 'excelpowerpoint', 'angular']
   const portGallery: PortObject[] = useContext(ProjectsContext)
-  const projectsArray = Object.create(portGallery)
-  const {projects, setProjects, reducer, totalProjects} = useSearchFilters
-  (portGallery)
-  let copiedProjects;
-  projects.length ? copiedProjects = Object.create(projects) : null;
-  let itemsPerPage = 4;
-  let totalPages = Math.ceil(portGallery.length / 4);
+  const {projects, setProjects, reducer} = useSearchFilters(portGallery)
+  let itemsPerPage = 10;
+  let totalPages = Math.ceil(portGallery.length / itemsPerPage);
+
+  useEffect(() => {
+    if (!isProjectsArray) setIsprojectsArray(true)
+    let pages = Math.ceil(projects.length / itemsPerPage);
+    setTotalPages(pages)
+  }, [projects])
 
   const resetProjects = ({
     searchBarRef, 
@@ -58,8 +62,8 @@ function DevPortfolio() {
     const pageIndex = page - 1;
     const tasksStartingIndex = pageIndex === 0 ? 0 : pageIndex * itemsPerPage;
     const tasksEndingIndex = tasksStartingIndex + itemsPerPage;
-    const tasks = projectsArray.splice(tasksStartingIndex, tasksEndingIndex);
-    console.log(portGallery)
+    const copiedProjects = Object.create(projectsArray)
+    const tasks = copiedProjects.splice(tasksStartingIndex, tasksEndingIndex);
     return tasks
   }
 //
@@ -126,9 +130,10 @@ function DevPortfolio() {
           </form>
         </div>
       </div>
-      <div>
-      {projects.length > 0 ? 
-      setPageContent(page, copiedProjects, itemsPerPage).map((project: PortObject, index: number) => {
+      <section className="devport-projects-section">
+      <div className="devport-projects-ctnr">
+      {isProjectsArray ? 
+      setPageContent(page, projects, itemsPerPage).map((project: PortObject, index: number) => {
         return (
           <div className="devport-project-ctnr" key={index}>
             <ProjectComponent
@@ -141,7 +146,7 @@ function DevPortfolio() {
         )
       })     
       :
-      setPageContent(page, projectsArray, itemsPerPage).map((project, index) => {
+      setPageContent(page, portGallery, itemsPerPage).map((project, index) => {
         return (
           <div className="devport-project-ctnr" key={index}>
             <ProjectComponent
@@ -154,8 +159,9 @@ function DevPortfolio() {
         )
       })
       }
+      </div>
       <Pagination
-        count={totalPages}
+        count={!totalPagesState ? totalPages : totalPagesState}
         page={page}
         onChange={handleChange}
         sx={{
@@ -171,7 +177,7 @@ function DevPortfolio() {
     },
   }}
       />
-      </div>
+      </section>
     </section>
   )
 }
