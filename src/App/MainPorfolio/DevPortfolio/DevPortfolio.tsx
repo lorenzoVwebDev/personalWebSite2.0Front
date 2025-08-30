@@ -62,7 +62,7 @@ function DevPortfolio() {
     console.log(portGallery)
     return tasks
   }
-
+//
   return (
     <section className="webport-section">
       <div className="webport-form-ctnr">
