@@ -17,8 +17,6 @@ function MainPortfolio() {
 
   path = splitPathCreator(path)
 
-  console.log(path)
-
   const musicPath = createPath({
     hash: '',
     pathname: '/portfolio/musicport',

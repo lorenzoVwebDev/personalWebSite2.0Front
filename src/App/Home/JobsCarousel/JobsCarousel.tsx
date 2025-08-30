@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { useIntersectionObserver } from "@uidotdev/usehooks";
 import { type JobsObject } from '@types/types';
@@ -34,17 +35,26 @@ type PropTypes = {
 
 
 function JobsCarousel({jobsDone}: PropTypes) {
+  const [state, setState] = useState(false)
   let navigate = useNavigate();
   const [ref, entry] = useIntersectionObserver({
     threshold: 0,
     root: null,
     rootMargin: "0px",
   })
+  const returnState = () => {
+    setState(true);
+    return state
+  }
+
+  useEffect(() => {
+    if (entry?.isIntersecting && !state) setState(true)
+  }, [entry?.isIntersecting])
 
 
   return (
     <section className='home-carousel-section' ref={ref}> { 
-      entry?.isIntersecting && <Carousel 
+      state && <Carousel 
       responsive={responsive}
       className="home-carousel"
     >

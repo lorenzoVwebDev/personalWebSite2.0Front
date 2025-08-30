@@ -1,0 +1,116 @@
+@use '../../../style/mixin' as *;
+    
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  background-color: $hover-color;
+  color: $bg-color;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  transition: .6s;
+  box-shadow: $neon-box-shadow;
+  border-radius: 5px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border: 2px solid $hover-color;
+  cursor: pointer;
+  &:hover {
+    color: $hover-color;
+    &:before {
+      width: 100%;
+    }
+  }
+
+        &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $bg-color;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    transition: .4s;
+  }
+}
+
+.btn2 {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  background-color: $bg-color;
+  color: $hover-color;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  transition: .6s;
+  box-shadow: $neon-box-shadow;
+  border-radius: 5px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border: 2px solid $hover-color;
+  cursor: pointer;
+  &:hover {
+    color: $bg-color;
+    &:before {
+      width: 100%;
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $hover-color;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    transition: .4s;
+  }
+}
+
+.btn3 {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  background-color: $bg-color;
+  color: $hover-color;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  transition: .6s;
+  box-shadow: $neon-box-shadow;
+  border-radius: 5px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border: 2px solid $hover-color;
+  border-radius: 50px;
+  cursor: pointer;
+  &:hover {
+    color: $bg-color;
+    &:before {
+      width: 100%;
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $hover-color;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    transition: .4s;
+  }
+}
