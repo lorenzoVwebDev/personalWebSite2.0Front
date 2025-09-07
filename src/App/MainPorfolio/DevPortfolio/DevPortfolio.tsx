@@ -22,6 +22,7 @@ function DevPortfolio() {
   const {devPath} = useOutletContext<OutletContextType>()
   const OptionsArray = ['php', 'reactprojects', 'projects', 'node', 'excelpowerpoint', 'angular']
   const portGallery: PortObject[] = useContext(ProjectsContext)
+  console.log(portGallery)
   const {projects, setProjects, reducer} = useSearchFilters(portGallery)
   let itemsPerPage = 10;
   let totalPages = Math.ceil(portGallery.length / itemsPerPage);
@@ -30,7 +31,7 @@ function DevPortfolio() {
     if (!isProjectsArray) setIsprojectsArray(true)
     let pages = Math.ceil(projects.length / itemsPerPage);
     setTotalPages(pages)
-  }, [projects])
+  }, [portGallery])
 
   const resetProjects = ({
     searchBarRef, 

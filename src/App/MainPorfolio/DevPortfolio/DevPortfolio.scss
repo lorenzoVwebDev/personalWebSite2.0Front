@@ -68,7 +68,8 @@
   & .devport-projects-section {
       & .devport-projects-ctnr {
     display: grid;
-    grid-template-columns: repeat(5, 25rem);
+    grid-template-columns: repeat(5, 18rem);
+    grid-template-rows: auto;
     min-height: 80vh;
     padding-bottom: 2rem;
   }
