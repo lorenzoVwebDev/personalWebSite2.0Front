@@ -1,12 +1,27 @@
 @use '../../../style/mixin' as *;
 
 .home-presentation-section {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 3rem;
   gap: 0.5rem;
-  background-image: url("http://localhost:3000/images/home-page-personal.jpg");
   background-size: 100%;
+  min-height: 81rem;
+  & .home-presentation-background-img {
+    z-index: -1 !important;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    & img {
+      object-fit: cover;
+      object-position: top;
+      width: 100%;
+      height: 100%;
+    }
+  }
   & h1 {
     text-align: center;
     font-size: 3rem;

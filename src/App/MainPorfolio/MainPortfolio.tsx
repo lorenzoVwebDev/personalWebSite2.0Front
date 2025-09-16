@@ -53,7 +53,7 @@ function MainPortfolio() {
   return (
     <section className="mainport-ctnr">
       <div className="mainport-background-image-ctnr">
-        <img src={`${import.meta.env.VITE_DEV_API}images/mainport-background.png`} alt="mainport-background.png" fetchPriority='high' className="mainport-background-image"/>  
+        <img src={`${import.meta.env.VITE_DEV_API}images/mainport-background.webp`} alt="mainport-background.png" fetchPriority='high' className="mainport-background-image"/>  
       </div>
     <BackLinksComponent
       backlickArray={path}

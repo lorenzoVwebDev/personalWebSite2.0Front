@@ -98,6 +98,8 @@
         font-size: 1.9rem;
         text-align: center;
         opacity: 1;
+          -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
       }
     }
 
@@ -110,11 +112,59 @@
         font-size: 1rem;
         text-align: center;
         opacity: 1;
+        -webkit-text-stroke-width: 0.5px;
+        -webkit-text-stroke-color: black;
       }
     }
 
     a {
       color: white;
+      -webkit-text-stroke-width: 0.1px;
+      -webkit-text-stroke-color: black;
+    }
+    & .devport-neon-button-ctnr {
+      display: flex;
+      justify-content: center;
+      padding-top: 1rem;
+      & .devport-neon-button {
+        padding: 0.3rem 0.2rem 0.3rem 0.2rem;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        background-color: $bg-color;
+        color: $hover-color;
+        transition: .6s;
+        box-shadow: $neon-box-shadow;
+        border-radius: 25px;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        border: 2px solid $hover-color;
+        cursor: pointer;
+        &:hover {
+          color: $bg-color;
+          &:before {
+            width: 100%;
+          }
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: $hover-color;
+          width: 0;
+          height: 100%;
+          z-index: -1;
+          transition: .4s;
+        }
+      }
+    }
+
+    .track-login-href {
+      text-align: center;
     }
   }
   & .track-img-ctnr {

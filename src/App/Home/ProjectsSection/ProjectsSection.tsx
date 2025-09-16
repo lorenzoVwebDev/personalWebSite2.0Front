@@ -71,12 +71,7 @@ function ProjectsSection({portGallery}: PropTypes) {
       {portGallery &&
       <Carousel
         responsive={responsive}
-        arrows={false}
-        autoPlay={true}
-        autoPlaySpeed={1000}
-        transitionDuration={4000}
-        customTransition={'transform 4000ms linear'}
-        infinite={true}
+        infinite={true} 
       >
         {portGallery.map((project, index) => {
 
@@ -108,13 +103,7 @@ function ProjectsSection({portGallery}: PropTypes) {
       {track && 
       <Carousel 
         responsive={responsive}
-        arrows={false}
-        autoPlay={true}
-        autoPlaySpeed={1000}
-        transitionDuration={4000}
-        customTransition={'transform 4000ms linear'}
-        infinite={true}
-        rtl={true}
+        infinite={true} 
       >
         {track.map((song, index) => {
           return <TrackComponent

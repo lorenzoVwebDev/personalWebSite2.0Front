@@ -69,7 +69,8 @@ function JobsCarousel({jobsDone}: PropTypes) {
             }}></i></p>
             <p>
               {job.slightDescription}
-            </p>
+              
+            </p><span>...</span>
             <br />
             <NeonButton
               action={navigate}

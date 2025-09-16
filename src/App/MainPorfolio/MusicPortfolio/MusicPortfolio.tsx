@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import SpotifySdkTokenProvider, {tokensObject} from '@context/SpotifySdkProvider';
-import { connectSpotifySdk } from '../../services/spotifyServices';
+import { connectSpotifySdk } from '@services/spotifyServices';
 import { type SpotifySdkContextType, type TrackType } from '../../../types/types';
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'

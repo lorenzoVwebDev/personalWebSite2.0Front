@@ -1,5 +1,5 @@
 import type React from "react";
-import { useNavigate, redirect } from "react-router";
+import { redirect } from "react-router";
 import { type PortObject } from "../../../types/types";
 import { createBlobObject } from "../../utils/blobParsing";
 import NeonButton from "../NeonButton/NeonButton";
@@ -8,10 +8,11 @@ import './ProjectComponent.scss'
 type PropTypes = {
   project: PortObject,
   index: number,
-  parentComponent?: string
+  parentComponent?: string,
+  children?: React.ReactElement
 }
 
-function ProjectComponent({project, index, parentComponent}: PropTypes) {
+function ProjectComponent({project, index, parentComponent, children}: PropTypes) {
   const blobObject = createBlobObject(project.image64)
   redirect(project.href)
   switch (parentComponent) {
@@ -19,6 +20,7 @@ function ProjectComponent({project, index, parentComponent}: PropTypes) {
     return (
         <div className="project-dev" key={index}>
         <div className="project-about-ctnr">
+            {children && children}
             <h1>{project.header}</h1>
             <p>{project.description}</p>
             <NeonButton

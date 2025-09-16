@@ -1,136 +1,62 @@
 import { useContext, useRef, useEffect, useState } from 'react'
-import { Link, useOutletContext, useLocation} from 'react-router'
+import { useOutletContext} from 'react-router'
 import { ProjectsContext } from '@context/ProjectsProvider'
 import './DevPortfolio.scss'
-import useSearchFilters, {actionTypes, type ActionType} from '@hooks/useSearchFilters'
+import useSearchFilters from '@hooks/useSearchFilters'
 //component
 import ProjectComponent from '@common/ProjectComponent/ProjectComponent'
-import SubmitNeonButton from '@common/SubmitNeonButton/SubmitNeonButton'
-import NeonButton from '@common/NeonButton/NeonButton'
-import { Box, Pagination, Typography } from '@mui/material';
+import { Pagination } from '@mui/material';
+import { Modal } from '@mui/material';
+import { Icon } from '@mui/material';
+import InfoModal from './InfoModal/InfoModal'
+import SearchForm from './SearchForm/SearchForm'
+//utils&types
+import { setPageContent } from '../../utils/searchPaginationUtils'
+import { type PortObject, type OutletContextType } from '@types/types'
 
-//utils
-import { splitPathCreator } from '@utils/routingFunctions'
-import { type OutletContextType, type PortObject } from '@types/types'
 
 function DevPortfolio() {
+  //Hooks
   const [page, setPage] = useState(1);
+  const [modalProject, setModalProject] = useState<PortObject | null>(null)
+  const [openModal, setOpenModal] = useState<boolean>(false)
   const [totalPagesState, setTotalPages] = useState<number | undefined>(undefined)
   const [isProjectsArray, setIsprojectsArray] = useState<boolean>(false)
   const searchBarRef = useRef(null)
   const optionFiltersRef = useRef(null)
   const {devPath} = useOutletContext<OutletContextType>()
-  const OptionsArray = ['php', 'reactprojects', 'projects', 'node', 'excelpowerpoint', 'angular']
   const portGallery: PortObject[] = useContext(ProjectsContext)
-  console.log(portGallery)
   const {projects, setProjects, reducer} = useSearchFilters(portGallery)
+  //variables
   let itemsPerPage = 10;
   let totalPages = Math.ceil(portGallery.length / itemsPerPage);
-
+  //useEffect
   useEffect(() => {
-    if (!isProjectsArray) setIsprojectsArray(true)
+    if (!isProjectsArray && projects.length > 0) setIsprojectsArray(true)
     let pages = Math.ceil(projects.length / itemsPerPage);
     setTotalPages(pages)
-  }, [portGallery])
 
-  const resetProjects = ({
-    searchBarRef, 
-    optionFiltersRef, 
-    setProjects, 
-    reducer, 
-    portGallery, 
-    actionTypes}: {
-      searchBarRef:  React.RefObject<HTMLInputElement | null>,
-      optionFiltersRef: React.RefObject<HTMLSelectElement | null>,
-      setProjects:  React.Dispatch<React.SetStateAction<PortObject[]>>,
-      reducer: (projectsArray: PortObject[], action: ActionType) => PortObject[],
-      portGallery: PortObject[],
-      actionTypes: actionTypes
-    }) => {
-      setProjects(reducer(portGallery, {
-        type: actionTypes.SEARCH, 
-        text: ''
-      }))
-      if (optionFiltersRef.current) optionFiltersRef.current.selectedIndex = 0 
-      if (searchBarRef.current) searchBarRef.current.value = ''
-  }
+  }, [portGallery, projects])
+  //Function
 
   const handleChange = (event, value) => {
     setPage(value)
   }
 
-  const setPageContent = (page: number, projectsArray: PortObject[], itemsPerPage: number) => {
-    const pageIndex = page - 1;
-    const tasksStartingIndex = pageIndex === 0 ? 0 : pageIndex * itemsPerPage;
-    const tasksEndingIndex = tasksStartingIndex + itemsPerPage;
-    const copiedProjects = Object.create(projectsArray)
-    const tasks = copiedProjects.splice(tasksStartingIndex, tasksEndingIndex);
-    return tasks
+  const openModalFunc = (setOpenModal: React.Dispatch<React.SetStateAction<boolean>>) => {
+    setOpenModal(true)
   }
-//
+
+//Jsx
   return (
     <section className="webport-section">
-      <div className="webport-form-ctnr">
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '1rem'
-        }}>
-        <form onSubmit={(e) => {
-            e.preventDefault()
-            const searchBarInput = e.target.children[0].value 
-            setProjects(reducer(portGallery, {
-              type: actionTypes.SEARCH, 
-              text: searchBarInput
-            }))
-          }} className="webport-searchbar" id="webport-searchbar">
-          <input type="text" name="search bar" placeholder='Search Project' ref={searchBarRef}/>
-          <button type="submit"><i className="bi bi-search"></i></button>
-        </form>
-        <NeonButton
-          action={resetProjects}
-          actionParameters={{
-           searchBarRef,
-           optionFiltersRef,
-           setProjects,
-           reducer,
-           portGallery,
-           actionTypes
-          }}
-          classString={'btn3'}
-          buttonText={'Reset Flters'}
-        />
-        </div>
-        <h1><span>W</span>eb <span>D</span>ev <span>P</span>rojects</h1>
-        <div className="webport-filters-ctnr">
-          <label htmlFor="filters-form"><span>F</span>ilters</label>
-          <form onSubmit={(e) => {
-            e.preventDefault()
-            const optionContent = e.target.children[1].value
-            if (optionContent != 'Choose Type') {
-              setProjects(reducer(portGallery, {
-                type: actionTypes.APPLY_FILTERS, 
-                text: optionContent
-              }))
-            }
-          }} id="filters-form">
-            <label htmlFor="project-type"><span>S</span>elect <span>P</span>roject <span>T</span>ype</label>
-            <select name="project-type" id="project-type" ref={optionFiltersRef}>
-              <option selected disabled>Choose Type</option>
-              {
-                OptionsArray.map((option, index) => {
-                  return <option value={option} key={index}>{option}</option>
-                })
-
-              }
-            </select>
-            <SubmitNeonButton
-            buttonText={'Apply Filters'}
-            classString={'btn'} 
-            />
-          </form>
-        </div>
-      </div>
+      <SearchForm
+        setProjects={setProjects}
+        reducer={reducer}
+        portGallery={portGallery}
+        searchBarRef={searchBarRef}
+        optionFiltersRef={optionFiltersRef}
+      />
       <section className="devport-projects-section">
       <div className="devport-projects-ctnr">
       {isProjectsArray ? 
@@ -142,12 +68,17 @@ function DevPortfolio() {
               index={index}
               parentComponent={'DevPortfolio'}
               routePath={devPath}
-            />
+            >
+            <button onClick={() => {
+              openModalFunc(setOpenModal)
+              setModalProject(project)
+            }} className="devport-neon-button">More Info<Icon>open_in_new</Icon></button>
+            </ProjectComponent>
           </div>
         )
       })     
       :
-      setPageContent(page, portGallery, itemsPerPage).map((project, index) => {
+      setPageContent(page, portGallery, itemsPerPage).map((project: PortObject, index: number) => {
         return (
           <div className="devport-project-ctnr" key={index}>
             <ProjectComponent
@@ -155,7 +86,16 @@ function DevPortfolio() {
               index={index}
               parentComponent={'DevPortfolio'}
               routePath={devPath}
-            />
+            >
+            <button onClick={() => {
+              openModalFunc(setOpenModal)
+              setModalProject(project)
+            }} className="devport-neon-button">More Info<Icon sx={
+              {
+                fontSize: 'calc(1vw+1vh)'
+              }
+            }>open_in_new</Icon></button>
+            </ProjectComponent>
           </div>
         )
       })
@@ -167,18 +107,27 @@ function DevPortfolio() {
         onChange={handleChange}
         sx={{
     "& .MuiPaginationItem-root": {
-      color: "white",          // text color
+      color: "white",          
     },
     "& .MuiPaginationItem-root.Mui-selected": {
-      backgroundColor: "white", // background for selected
-      color: "black",           // selected text color (so it’s visible)
+      backgroundColor: "white",
+      color: "black",          
     },
     "& .MuiPaginationItem-root:hover": {
-      backgroundColor: "rgba(255,255,255,0.2)", // hover effect
-    },
+      backgroundColor: "rgba(255,255,255,0.2)", 
+    }, 
   }}
       />
       </section>
+      <Modal
+        open={openModal}
+        aria-labelledby="project-info"
+      ><InfoModal
+        modalProject={modalProject}
+        setModalProject={setModalProject}
+        setOpenModal={setOpenModal}
+      />
+      </Modal>
     </section>
   )
 }

@@ -6,6 +6,9 @@ function HomePresentation() {
 
 
   return <section className="home-presentation-section">
+          <div className="home-presentation-background-img">
+            <img src={`${import.meta.env.VITE_DEV_API}images/home-page-personal.webp`} alt="home-background.png" fetchPriority="high"/>
+          </div>
           <h1><span>L</span>orenzo <span>V</span>iganego | <span>F</span>ullstack Dev & <span>M</span>usic Producer</h1>
           <div className="home-presentation-content">
           <div className="home-presentation-section-left">
@@ -21,7 +24,7 @@ function HomePresentation() {
             <InfoSocials/>
           </div>
           <div className="home-presentation-section-right">
-            <img src={`${import.meta.env.VITE_DEV_API}images/home-background.png`} alt="home-background.png" fetchPriority="high"/>
+            <img src={`${import.meta.env.VITE_DEV_API}images/home-background.webp`} alt="home-background.png" />
           </div>
           </div>
         </section>
