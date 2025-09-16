@@ -4,7 +4,7 @@ import { type PortObject } from "../../../types/types";
 import { createBlobObject } from "../../utils/blobParsing";
 import NeonButton from "../NeonButton/NeonButton";
 import './ProjectComponent.scss'
-
+//
 type PropTypes = {
   project: PortObject,
   index: number,
