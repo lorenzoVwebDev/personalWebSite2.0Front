@@ -1,1 +1,109 @@
 @use '../../style/mixin' as *;
+
+.about-abstract-section {
+  background-color: $bg-color;
+  padding: 2rem 2rem 2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & .about-abstract-ctnr {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    gap: 1rem;
+    & h1 {
+      font-size: 3rem;
+      color: white;
+      & span {
+        color: $hover-color;
+      }
+    }
+
+    & p {
+      color: white;
+    }
+
+    & .about-abstract-socials-ctnr {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      & .about-abstract-social-icons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        & a {
+         color: white;
+         & i {
+          font-size: 1.5rem;
+         }
+        }
+      }
+    }
+  }
+
+  & .about-abstract-img-ctnr {
+    width: 35%;
+    height: 30rem;
+    overflow: hidden;
+    border: solid 1px gray;
+    border-radius: 10px;
+    & img {
+      object-fit: cover;
+      object-position: top;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.about-jobs-section {
+  background-color: $black-footer;
+  padding: 2rem 2rem 2rem 2rem;
+  & .about-jobs-ctnr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    padding-bottom: 3rem;
+    & .about-jobs-description-ctnr {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      align-items: left;
+      width: 65%;
+      & h1 {
+        font-size: 3rem;
+        text-align: left;
+        color: white;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: rgb(23, 23, 23);
+      }
+
+      & p {
+        color: white;
+        font-size: 1.4rem;
+      }
+    }
+
+    & .about-jobs-img-ctnr {
+        width: 35%;
+        max-height: 50%;
+        height: 15rem;
+        border: solid gray 1px;
+        overflow: hidden;
+        border-radius: 20px;
+        & img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+    }
+  }
+
+}

@@ -12,7 +12,7 @@ function Header() {
     </div>
     <div className="header-right">
       <ul>
-        <li>About Me</li>
+        <li><Link to="/aboutme">About Me</Link></li>
         <li><Link to="/portfolio">Portfolios</Link></li>
         <li><Link to="/contacts">Contacts</Link></li>
         <li>Merchandising</li>

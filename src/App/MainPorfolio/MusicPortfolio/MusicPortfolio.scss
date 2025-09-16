@@ -1,0 +1,12 @@
+@use '../../../style/mixin' as *;
+
+.musicport-title {
+  text-align: center;
+  font-size: 3rem;
+}
+.musicport-tracks-ctnr {
+  padding-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

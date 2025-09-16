@@ -7,3 +7,972 @@
     color: white;
   }
 }
+
+@media (max-width: 1140px) {
+  //HomePresentation 
+    .home-presentation-section {
+      min-height: 61rem;
+      & .home-presentation-background-img {
+        & img {
+        }
+      }
+      & h1 {
+        font-size: 2.5rem;
+        & span {
+        }
+      }
+      & .home-presentation-content {
+        & .home-presentation-section-left {
+
+        & .home-presentation-synopsis {
+
+        }
+      }
+      & .home-presentation-section-right {
+
+        & img {
+
+        }
+      }
+      }
+
+    }
+    //HomePresentation/InfoSocials
+      .info-box {
+        & .work-contacts {
+          & .email-info {
+            & h5 {
+            }
+
+            & h6 {
+              font-size: 0.8rem;
+            }
+          }
+
+          & .linkedin-info {
+            & h5 {
+            }
+
+            & a {
+              font-size: 0.8rem;
+            }
+          }
+        }
+        & .btn-box {
+          & .btn, .btn2 {
+            
+          }
+        }
+
+
+        & .social-icons {
+          & a {
+            &:hover {
+              &:before {
+              }
+            }
+
+            &:before {
+            }
+            & i {
+            }
+          }
+        }
+      }
+
+  //JobsCarousel
+   .home-carousel-section {
+      & .react-multi-carousel-list {
+        & .job {
+
+        & .job-about-ctnr {
+
+        }
+          & .job-img-ctnr {
+
+            & img {
+
+            }
+          }
+        }
+    }
+   }
+
+  //ProjectSection
+    .home-projects-section {
+
+      & .modulator {
+
+      }
+      &:before {
+
+      }
+
+      & .project-section-ctnr {
+        
+        & .project-section-ctnr-header h1 {
+                      
+          & span {
+
+          }
+        }
+        & button {
+
+          
+        }
+      }
+
+      & .react-multi-carousel-list {
+
+
+      & .job {
+
+      & .job-about-ctnr {
+
+        h1 {
+
+        }
+      }
+      & .job-img-ctnr {
+
+        & img {
+
+        }
+      }
+    }
+    }
+    }
+    //ProjectSection/TrackComponent
+      .track {
+
+        & .track-about-ctnr {
+
+          h1 {
+
+          }
+        }
+        & .track-img-ctnr {
+
+          & img {
+
+          }
+        }
+      }
+}
+
+@media (max-width: 980px) {
+  .home-container {
+    //HomePresentation 
+      & .home-presentation-section {
+              min-height: 51rem;
+        & .home-presentation-background-img {
+          & img {
+          }
+        }
+        & h1 {
+          font-size: 2.5rem;
+          & span {
+          }
+        }
+        & .home-presentation-content {
+          & .home-presentation-section-left {
+
+          & .home-presentation-synopsis {
+
+          }
+        }
+        & .home-presentation-section-right {
+
+          & img {
+
+          }
+        }
+        }
+
+      }
+      //HomePresentation/InfoSocials
+        .info-box {
+          & .work-contacts {
+            & .email-info {
+              & h5 {
+              }
+
+              & h6 {
+                font-size: 0.8rem;
+              }
+            }
+
+            & .linkedin-info {
+              & h5 {
+              }
+
+              & a {
+                font-size: 0.8rem;
+              }
+            }
+          }
+          & .btn-box {
+            & .btn, .btn2 {
+              width: 9rem;
+              font-size: 0.9rem;
+            }
+          }
+
+
+          & .social-icons {
+            
+            & a {
+              width: 1.8rem;
+              height: 1.8rem;
+              & i {
+                font-size: 1.2rem;
+              }
+              &:hover {
+                &:before {
+                }
+              }
+
+              &:before {
+              }
+              & i {
+              }
+            }
+          }
+        }
+
+    //JobsCarousel
+      & .home-carousel-section {
+          & .react-multi-carousel-list {
+            & .job {
+
+            & .job-about-ctnr {
+              & h1 {
+                font-size: 1.6rem;
+              }
+            }
+              & .job-img-ctnr {
+
+                & img {
+
+                }
+              }
+            }
+        }
+      }
+
+    //ProjectSection
+      & .home-projects-section {
+
+        & .modulator {
+
+        }
+        &:before {
+
+        }
+        
+        & .project-section-ctnr {
+
+          & .project-section-ctnr-header {
+
+            font-size: 2.5rem;
+
+            & span {
+
+            }
+          }
+          & .btn3 {
+            width: 22%;
+            font-size: 0.6rem;
+          }
+        }
+
+        & .react-multi-carousel-list {
+
+        & .job {
+          height: 15rem;
+        & .job-about-ctnr {
+
+          h1 {
+            font-size: 1.5rem;
+          }
+        }
+        & .job-img-ctnr {
+          & img {
+          }
+        }
+      }
+      }
+      }
+      //ProjectSection/TrackComponent
+        & .track {
+          height: 15rem;
+          & .track-about-ctnr {
+
+            h1 {
+              font-size: 1.5rem;
+            }
+          }
+          & .track-img-ctnr {
+
+            & img {
+
+            }
+          }
+        }
+  }
+
+}
+
+
+@media (max-width: 870px) {
+  .home-container {
+    //HomePresentation 
+      & .home-presentation-section {
+
+        & .home-presentation-background-img {
+          & img {
+          }
+        }
+        & h1 {
+          & span {
+          }
+        }
+        & .home-presentation-content {
+          & .home-presentation-section-left {
+
+          & .home-presentation-synopsis {
+
+          }
+        }
+        & .home-presentation-section-right {
+          height: fit-content;
+          & img {
+
+          }
+        }
+        }
+
+      }
+      //HomePresentation/InfoSocials
+        .info-box {
+          & .work-contacts {
+            & .email-info {
+              & h5 {
+              }
+
+              & h6 {
+                font-size: 0.7rem;
+              }
+            }
+
+            & .linkedin-info {
+              & h5 {
+              }
+
+              & a {
+                font-size: 0.7rem;
+              }
+            }
+          }
+          & .btn-box {
+            & .btn, .btn2 {
+              width: 9rem;
+              font-size: 0.9rem;
+            }
+          }
+
+
+          & .social-icons {
+            
+            & a {
+              width: 1.8rem;
+              height: 1.8rem;
+              & i {
+                font-size: 1.2rem;
+              }
+              &:hover {
+                &:before {
+                }
+              }
+
+              &:before {
+              }
+              & i {
+              }
+            }
+          }
+        }
+
+    //JobsCarousel
+      & .home-carousel-section {
+          & .react-multi-carousel-list {
+            & .job {
+
+            & .job-about-ctnr {
+              & h1 {
+                font-size: 1.6rem;
+              }
+            }
+              & .job-img-ctnr {
+
+                & img {
+
+                }
+              }
+            }
+        }
+      }
+
+    //ProjectSection
+      & .home-projects-section {
+
+        & .modulator {
+
+        }
+        &:before {
+
+        }
+        
+        & .project-section-ctnr {
+
+          & .project-section-ctnr-header {
+
+            font-size: 2rem;
+
+            & span {
+
+            }
+          }
+          & .btn3 {
+            width: 25%;
+            font-size: 0.5rem;
+          }
+        }
+
+        & .react-multi-carousel-list {
+
+        & .job {
+          height: 15rem;
+        & .job-about-ctnr {
+
+          h1 {
+            font-size: 1.5rem;
+          }
+        }
+        & .job-img-ctnr {
+          & img {
+          }
+        }
+      }
+      }
+      }
+      //ProjectSection/TrackComponent
+        & .track {
+          height: 15rem;
+          & .track-about-ctnr {
+
+            h1 {
+              font-size: 1.5rem;
+            }
+          }
+          & .track-img-ctnr {
+
+            & img {
+
+            }
+          }
+        }
+  }
+
+}
+
+@media (max-width: 800px) {
+  .home-container {
+    //HomePresentation 
+      & .home-presentation-section {
+        min-height: 40rem;
+        & .home-presentation-background-img {
+          & img {
+          }
+        }
+        & h1 {
+          font-size: 1.7rem;
+          & span {
+          }
+        }
+        & .home-presentation-content {
+          & .home-presentation-section-left {
+
+          & .home-presentation-synopsis {
+            & p {
+              text-align: center;
+            }
+          }
+        }
+        & .home-presentation-section-right {
+          display: none;
+          & img {
+
+          }
+        }
+        }
+
+      }
+      //HomePresentation/InfoSocials
+        .info-box {
+          & .work-contacts {
+            & .email-info {
+              & h5 {
+              }
+
+              & h6 {
+                
+              }
+            }
+
+            & .linkedin-info {
+              & h5 {
+              }
+
+              & a {
+                
+              }
+            }
+          }
+          & .btn-box {
+            & .btn, .btn2 {
+              
+            }
+          }
+
+
+          & .social-icons {
+            
+            & a {
+              
+              & i {
+                
+              }
+              &:hover {
+                &:before {
+                }
+              }
+
+              &:before {
+              }
+              & i {
+              }
+            }
+          }
+        }
+
+    //JobsCarousel
+      & .home-carousel-section {
+          & .react-multi-carousel-list {
+            & .job {
+
+            & .job-about-ctnr {
+              & h1 {
+                
+              }
+            }
+              & .job-img-ctnr {
+
+                & img {
+
+                }
+              }
+            }
+        }
+      }
+
+    //ProjectSection
+      & .home-projects-section {
+
+        & .modulator {
+
+        }
+        &:before {
+
+        }
+        
+        & .project-section-ctnr {
+
+          & .project-section-ctnr-header {
+
+            
+
+            & span {
+
+            }
+          }
+          & .btn3 {
+            
+          }
+        }
+
+        & .react-multi-carousel-list {
+
+        & .job {
+          & .job-about-ctnr {
+
+          h1 {
+            
+          }
+        }
+        & .job-img-ctnr {
+          & img {
+          }
+        }
+      }
+      }
+      }
+      //ProjectSection/TrackComponent
+        & .track {
+          
+          & .track-about-ctnr {
+
+            h1 {
+              
+            }
+          }
+          & .track-img-ctnr {
+
+            & img {
+
+            }
+          }
+        }
+  }
+
+}
+
+@media (max-width: 690px) {
+  .home-container {
+    //HomePresentation 
+      & .home-presentation-section {
+
+        & .home-presentation-background-img {
+          & img {
+          }
+        }
+        & h1 {
+          font-size: 1.4rem;
+          & span {
+          }
+        }
+        & .home-presentation-content {
+          & .home-presentation-section-left {
+
+          & .home-presentation-synopsis {
+            font-size: 0.8rem;
+            & p {
+              font-size: 1.1em;
+            }
+          }
+        }
+        & .home-presentation-section-right {
+          & img {
+
+          }
+        }
+        }
+
+      }
+      //HomePresentation/InfoSocials
+        .info-box {
+          & .work-contacts {
+            & .email-info {
+              & h5 {
+              }
+
+              & h6 {
+                
+              }
+            }
+
+            & .linkedin-info {
+              & h5 {
+              }
+
+              & a {
+                
+              }
+            }
+          }
+          & .btn-box {
+            & .btn, .btn2 {
+              
+            }
+          }
+
+
+          & .social-icons {
+            
+            & a {
+              
+              & i {
+                
+              }
+              &:hover {
+                &:before {
+                }
+              }
+
+              &:before {
+              }
+              & i {
+              }
+            }
+          }
+        }
+
+    //JobsCarousel
+      & .home-carousel-section {
+          & .react-multi-carousel-list {
+            & .job {
+
+            & .job-about-ctnr {
+              & h1 {
+                
+              }
+            }
+              & .job-img-ctnr {
+
+                & img {
+
+                }
+              }
+            }
+        }
+      }
+
+    //ProjectSection
+      & .home-projects-section {
+
+        & .modulator {
+
+        }
+        &:before {
+
+        }
+        
+        & .project-section-ctnr {
+
+          & .project-section-ctnr-header {
+            & span {
+
+            }
+          }
+          & .btn3 {
+            
+          }
+        }
+
+        & .react-multi-carousel-list {
+
+        & .job {
+          & .job-about-ctnr {
+
+          h1 {
+            
+          }
+        }
+        & .job-img-ctnr {
+          & img {
+          }
+        }
+      }
+      }
+      }
+      //ProjectSection/TrackComponent
+        & .track {
+          
+          & .track-about-ctnr {
+
+            h1 {
+              
+            }
+          }
+          & .track-img-ctnr {
+
+            & img {
+
+            }
+          }
+        }
+  }
+
+}
+
+@media (max-width: 580px) {
+  .home-container {
+    //HomePresentation 
+      & .home-presentation-section {
+
+        & .home-presentation-background-img {
+          & img {
+          }
+        }
+        & h1 {
+
+          & span {
+          }
+        }
+        & .home-presentation-content {
+          & .home-presentation-section-left {
+
+          & .home-presentation-synopsis {
+
+            & p {
+
+            }
+          }
+        }
+        & .home-presentation-section-right {
+          & img {
+
+          }
+        }
+        }
+
+      }
+      //HomePresentation/InfoSocials
+        .info-box {
+          & .work-contacts {
+            & .email-info {
+              & h5 {
+              }
+
+              & h6 {
+                
+              }
+            }
+
+            & .linkedin-info {
+              & h5 {
+              }
+
+              & a {
+                
+              }
+            }
+          }
+          & .btn-box {
+            & .btn, .btn2 {
+              
+            }
+          }
+
+
+          & .social-icons {
+            
+            & a {
+              width: 1.5rem;
+              height: 1.5rem;
+              & i {
+                font-size: 1rem;
+              }
+              &:hover {
+                &:before {
+                }
+              }
+
+              &:before {
+              }
+              & i {
+              }
+            }
+          }
+        }
+
+    //JobsCarousel
+      & .home-carousel-section {
+          & .react-multi-carousel-list {
+            & .job {
+              height: 10rem;
+            & .job-about-ctnr {
+              & h1 {
+                font-size: 1rem;
+              }
+              & p {
+                &:nth-of-type(2n) {
+                  font-size: 0.7rem;
+                }
+                  & i {
+                    display: none;
+                  }                                  /* font-size: 0.5rem; */
+              
+              }
+            }
+              & .job-img-ctnr {
+
+                & img {
+
+                }
+              }
+            }
+        }
+      }
+
+    //ProjectSection
+      & .home-projects-section {
+
+        & .modulator {
+
+        }
+        &:before {
+
+        }
+        
+        & .project-section-ctnr {
+          font-size: 0.7rem;
+          & .project-section-ctnr-header {
+            font-size: 1.6rem;
+            & span {
+
+            }
+          }
+          & .btn3 {
+            height: 1.2rem;
+            width: 10rem;
+            font-size: 0.5em;
+          }
+        }
+
+        & .react-multi-carousel-list {
+
+        & .job {
+          height: 7rem;
+          & .job-about-ctnr {
+
+          h1 {
+            font-size: 1rem;
+          }
+        }
+        & .job-img-ctnr {
+          & img {
+          }
+        }
+      }
+      }
+      }
+      //ProjectSection/TrackComponent
+        & .track {
+                    height: 7rem;
+          & .track-about-ctnr {
+
+            h1 {
+                          font-size: 1rem;
+            }
+          }
+          & .track-img-ctnr {
+
+            & img {
+
+            }
+          }
+        }
+  }
+
+}
