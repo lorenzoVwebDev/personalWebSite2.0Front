@@ -7,20 +7,10 @@ import { type PortObject } from '../../../../types/types';
 import './InfoModal.scss'
 //utils
 import { createBlobObject } from '../../../utils/blobParsing';
-const modalStyle = {
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: 400,
-          minHeight: 400,
-          backgroundColor: "white",
-          bgcolor: 'background.paper',
-          border: '2px solid #000',
-          boxShadow: 24,
-          borderRadius: "15px",
-          p: 4,
-        }
+//react-icons
+import { FaReact, FaAngular, FaNode, FaPhp, FaHtml5  } from "react-icons/fa";
+import { BsMicrosoft } from "react-icons/bs";
+
 type PropTypes = {
   modalProject: PortObject | null,
   setModalProject: React.Dispatch<any>,
@@ -32,13 +22,30 @@ function InfoModal({modalProject, setModalProject, setOpenModal}: PropTypes) {
     setOpenModal(false)
   }
   const image = createBlobObject(modalProject?.image64)
-
+  
+  const type = modalProject?.type
   return (
-          
+/*           {type === "node" ? "bi bi-filetype-json" : type === "excelpowerpoint" ? "bi bi-microsoft" : type === "php" ? "bi bi-filetype-php" : type === "projects" ? "bi bi-javascript" : type === "reactprojects" ? "bi bi-filetype-jsx" : type === "angular" ? "bi bi-google" : ""} */
             modalProject != null && (
               <Box className="devport-infomodal-ctnr-total">
               <Box className="devport-infomodal-ctnr">
               <Typography className="devport-infomodal-header">{modalProject.header}</Typography>
+              <div className="devport-infomodal-icon-ctnr">
+              {type === "node" ? 
+                <FaNode 
+                  className="devport-infomodal-icon"
+                /> : type === "excelpowerpoint" ? <BsMicrosoft 
+                  className="devport-infomodal-icon"
+                /> : type === "php" ? <FaPhp
+                className="devport-infomodal-icon"
+                /> : type === "projects" ? <FaHtml5 
+                  className="devport-infomodal-icon"
+                /> : type === "reactprojects" ?  <FaReact 
+                  className="devport-infomodal-icon"
+                />: type === "angular" ? <FaAngular 
+                  className="devport-infomodal-icon"
+                /> : ""}
+              </div>
               <Typography className="devport-infomodal-description">{modalProject.description}</Typography>
               
               <NeonButton

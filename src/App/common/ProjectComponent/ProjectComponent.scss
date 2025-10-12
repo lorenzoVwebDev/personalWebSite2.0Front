@@ -16,24 +16,87 @@
     z-index: 1 !important;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     color: black;
-    gap: 1rem;
-    h1 {
-      font-size: 1.9rem;
-      text-align: center;
-      min-height: 30%;
-      max-height: 30%;
-      overflow: hidden;
+    gap: 0.3rem;
+    text-overflow: ellipsis;
+    & .devport-neon-button {
+      box-shadow: 5px 5px 10px black !important;
     }
+    & div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.2rem;
+      height: 50%;
+      padding-bottom: 0.5rem;
+      & h1 {
+        font-size: 1.5rem;
+        text-align: center;
+        vertical-align: middle;
+        text-wrap: wrap;
+        height: 50%;
+        overflow-y: hidden;
+        text-shadow: 10px 5px 10px black;
+      }
 
-    & p {
-      color: white;
-      display: flow-root;
-      overflow-y: clip;
-      min-height: 30%;
-      max-height: 30%;
+    & .project-dev-icon-ctnr {
+        background-color: white;
+        border-radius: 10px;
+        outline: solid 1px black;
+        display: flex;
+        align-items: center;
+        height: 35%;
+        padding: 0.2rem;
+        justify-content: center;
+        box-shadow: 5px 5px 10px black;
+      & .project-dev-icon {
+        font-size: 2rem;
+      }
+    }
+    }
+    & .devport-project-component-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      background-color: $hover-color;
+      color: $bg-color;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      font-weight: 600;
+      transition: .6s;
+      box-shadow: $neon-box-shadow;
+      border-radius: 5px;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      border: 2px solid $hover-color;
+      cursor: pointer;
+      &:hover {
+        color: $hover-color;
+        &:before {
+          width: 100%;
+        }
+      }
+
+            &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $bg-color;
+        width: 0;
+        height: 100%;
+        z-index: -1;
+        transition: .4s;
+      }
+      width: calc(15vw) !important;
+      height: calc(2vw + 2vh);
+      transition-property: color !important;
+      transition-duration: 0.6s !important;
     }
   }
   & .project-img-ctnr {
@@ -53,14 +116,6 @@
       width: 100%;
       height: 100%;
     }
-
-/*    & div {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-   } */
     }
 
   }

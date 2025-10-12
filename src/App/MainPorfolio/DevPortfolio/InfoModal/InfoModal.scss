@@ -22,13 +22,24 @@
     justify-content: top;
     align-items: center;
     gap: calc(1vw + 1vh);
+    min-height: 100%;
     & .devport-infomodal-header {
       text-align: center;
       @include ubuntu-bold;
       color: $hover-color;
       font-size: calc(1.5vw + 1.5vh);
-           -webkit-text-stroke-width: 1px;
-     -webkit-text-stroke-color: black;
+      -webkit-text-stroke-width: 0.01px;
+      -webkit-text-stroke-color: black;
+      text-shadow: 10px 5px 10px black;
+    }
+    & .devport-infomodal-icon-ctnr {
+      background-color: white;
+      border-radius: 10px;
+      outline: solid 1px black;
+      padding: 0.5rem;
+      & .devport-infomodal-icon {
+        font-size: 3rem;
+      }
     }
 
     & .devport-infomodal-description {
@@ -36,8 +47,7 @@
       @include ubuntu-bold;
       color: white;
       font-size: calc(1vw + 1vh);
-           -webkit-text-stroke-width: 1px;
-     -webkit-text-stroke-color: black;
+      text-shadow: 10px 10px 10px black;
     }
   }
  & .devport-infomodal-img-ctnr {
@@ -54,4 +64,88 @@
     height: 100%;
   }
  }
+}
+
+@media (max-width: 700px) {
+.devport-infomodal-ctnr-total {
+
+  & .devport-infomodal-ctnr {
+
+    & .devport-infomodal-header {
+
+    }
+    & .devport-infomodal-icon-ctnr {
+      & .devport-infomodal-icon {
+        font-size: 2rem;
+      }
+    }
+
+    & .devport-infomodal-description {
+      font-size: calc(3.1vw);
+    }
+  }
+  & .devport-infomodal-img-ctnr {
+
+    & img {
+
+    }
+  }
+}
+
+}
+
+@media (max-width: 500px) {
+.devport-infomodal-ctnr-total {
+
+  & .devport-infomodal-ctnr {
+
+    & .devport-infomodal-header {
+
+    }
+    & .devport-infomodal-icon-ctnr {
+      & .devport-infomodal-icon {
+        font-size: 2rem;
+      }
+    }
+
+    & .devport-infomodal-description {
+      font-size: 1.3rem;
+    }
+  }
+  & .devport-infomodal-img-ctnr {
+
+    & img {
+
+    }
+  }
+}
+
+}
+
+@media (max-width: 450px) {
+.devport-infomodal-ctnr-total {
+  width: 20rem;
+  & .devport-infomodal-ctnr {
+    
+    & .devport-infomodal-header {
+
+    }
+    & .devport-infomodal-icon-ctnr {
+      & .devport-infomodal-icon {
+        font-size: 2rem;
+      }
+    }
+
+    & .devport-infomodal-description {
+      font-size: 1.2rem;
+    }
+  }
+  & .devport-infomodal-img-ctnr {
+
+    & img {
+
+    }
+  }
+}
+
 }

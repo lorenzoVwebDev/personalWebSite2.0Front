@@ -72,7 +72,7 @@ function DevPortfolio() {
             <button onClick={() => {
               openModalFunc(setOpenModal)
               setModalProject(project)
-            }} className="devport-neon-button">More Info<Icon>open_in_new</Icon></button>
+            }} className="devport-neon-button">More Info<Icon className="devport-neon-button-icon">open_in_new</Icon></button>
             </ProjectComponent>
           </div>
         )
@@ -105,8 +105,9 @@ function DevPortfolio() {
         count={!totalPagesState ? totalPages : totalPagesState}
         page={page}
         onChange={handleChange}
+        className="devport-paginator"
         sx={{
-    "& .MuiPaginationItem-root": {
+/*     "& .MuiPaginationItem-root": {
       color: "white",          
     },
     "& .MuiPaginationItem-root.Mui-selected": {
@@ -115,7 +116,7 @@ function DevPortfolio() {
     },
     "& .MuiPaginationItem-root:hover": {
       backgroundColor: "rgba(255,255,255,0.2)", 
-    }, 
+    },  */
   }}
       />
       </section>

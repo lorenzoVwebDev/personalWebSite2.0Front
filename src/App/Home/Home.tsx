@@ -1,4 +1,4 @@
-import { useContext, lazy, Suspense } from 'react'
+import { useContext, lazy, Suspense, useEffect } from 'react'
 import { ProjectsContext } from '../Context/ProjectsProvider'
 import HomePresentation from './HomePresentation/HomePresentation'
 import JobsCarousel from './JobsCarousel/JobsCarousel'
@@ -11,6 +11,10 @@ const ProjectsSection = lazy(() => import('./ProjectsSection/ProjectsSection'))
 
 function Home() {
   const projects = useContext(ProjectsContext)
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [])
 
 //first commit
   return (

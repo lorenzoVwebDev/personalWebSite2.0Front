@@ -82,3 +82,226 @@
     }
   }
 }
+
+@media (max-width: 1000px) {
+.mainport-ctnr {
+  
+  & h1 {
+    & span {
+      
+    }
+  }
+  & .mainport-background-image-ctnr {
+   
+    & .mainport-background-image {
+
+    }
+  }
+
+  & .mainport-portlinks-container {
+
+    & h1 {
+      font-size: 2.5rem;
+    }
+    & .port-link-container {
+
+      & h1 {
+
+      }
+      &:hover {
+
+        & h1 {
+
+        }
+      }
+      & .port-link-image {
+
+      }
+      & .port-link-modulator {
+
+      }
+    }
+  }
+}
+}
+
+@media (max-width: 670px) {
+.mainport-ctnr {
+  
+  & h1 {
+    & span {
+      
+    }
+  }
+  & .mainport-background-image-ctnr {
+   
+    & .mainport-background-image {
+
+    }
+  }
+
+  & .mainport-portlinks-container {
+    padding-top: 0.5rem;
+    & h1 {
+      font-size: 2.1rem;
+    }
+    & .port-link-container {
+
+      & h1 {
+        font-size: 2.2rem;
+      }
+      &:hover {
+
+        & h1 {
+
+        }
+      }
+      & .port-link-image {
+
+      }
+      & .port-link-modulator {
+
+      }
+    }
+  }
+}
+}
+
+@media (max-width: 500px) {
+.mainport-ctnr {
+  
+  & h1 {
+    & span {
+      
+    }
+  }
+  & .mainport-background-image-ctnr {
+   
+    & .mainport-background-image {
+
+    }
+  }
+
+  & .mainport-portlinks-container {
+    padding-top: 0.5rem;
+    & h1 {
+      font-size: 1.8rem;
+    }
+    & .port-link-container {
+
+      & h1 {
+        font-size: 2.2rem;
+      }
+      &:hover {
+
+        & h1 {
+
+        }
+      }
+      & .port-link-image {
+
+      }
+      & .port-link-modulator {
+
+      }
+    }
+  }
+}
+}
+
+@media (max-width: 450px) {
+.mainport-ctnr {
+  padding: 0;
+  & .backlinks-component-container {
+    & .backlink-container {
+
+      & a {
+      font-size: 0.9rem;
+      }
+
+      & i {
+        font-size: 0.7rem !important; 
+      }
+    }
+  }
+  & h1 {
+    & span {
+      
+    }
+  }
+  & .mainport-background-image-ctnr {
+   
+    & .mainport-background-image {
+
+    }
+  }
+
+  & .mainport-portlinks-container {
+    padding-top: 0.8rem;
+    & h1 {
+      font-size: 1.5rem;
+    }
+    & .port-link-container {
+
+      & h1 {
+        font-size: 2rem;
+      }
+      &:hover {
+
+        & h1 {
+
+        }
+      }
+      & .port-link-image {
+
+      }
+      & .port-link-modulator {
+
+      }
+    }
+  }
+}
+}
+
+@media (max-width: 400px) {
+.mainport-ctnr {
+  padding: 0;
+  & h1 {
+    & span {
+      
+    }
+  }
+  & .mainport-background-image-ctnr {
+   
+    & .mainport-background-image {
+
+    }
+  }
+
+  & .mainport-portlinks-container {
+    padding-top: 0.8rem;
+    & h1 {
+      font-size: 1.5rem;
+    }
+    & .port-link-container {
+      height: 10rem;
+      & h1 {
+        font-size: 2rem;
+      }
+      &:hover {
+
+        & h1 {
+
+        }
+      }
+      & .port-link-image {
+
+      }
+      & .port-link-modulator {
+
+      }
+    }
+  }
+}
+}
+

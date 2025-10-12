@@ -98,7 +98,7 @@
         font-size: 1.9rem;
         text-align: center;
         opacity: 1;
-          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-width: 0.1px;
   -webkit-text-stroke-color: black;
       }
     }
@@ -108,12 +108,14 @@
       flex-direction: column;
       align-items: center;
       gap: 0.5rem;
-            h2 {
+      h2 {
         font-size: 1rem;
         text-align: center;
+        color: $hover-color;
+        text-shadow: 3px 3px 2px black;
         opacity: 1;
-        -webkit-text-stroke-width: 0.5px;
-        -webkit-text-stroke-color: black;
+/*         -webkit-text-stroke-width: 0.01px;
+        -webkit-text-stroke-color: orange; */
       }
     }
 
@@ -182,6 +184,726 @@
       object-position: 50%;
       width: 100%;
       height: 100%;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .track-port {
+    width: calc(20vw);
+    height: calc(32vw);
+    & .btn-spotify {
+
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+
+    }
+    }
+
+    & .btn-spotify2 {
+
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+
+    }
+  }
+    & .track-about-ctnr {
+
+      & .h-ctnr {
+
+        h1 {
+
+        }
+      }
+
+      & .playback-controls {
+
+        h2 {
+
+        }
+      }
+
+      a {
+
+      }
+      & .devport-neon-button-ctnr {
+
+        & .devport-neon-button {
+
+          &:hover {
+
+            &:before {
+
+            }
+          }
+
+          &:before {
+
+          }
+        }
+      }
+
+      .track-login-href {
+
+      }
+    }
+    & .track-img-ctnr {
+
+      & img {
+
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+
+  .track-port {
+    height: calc(38vw);
+    & .btn-spotify {
+
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+
+    }
+    }
+
+    & .btn-spotify2 {
+
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+
+    }
+  }
+    & .track-about-ctnr {
+
+      & .h-ctnr {
+
+        h1 {
+
+        }
+      }
+
+      & .playback-controls {
+
+        h2 {
+
+        }
+      }
+
+      a {
+
+      }
+      & .devport-neon-button-ctnr {
+
+        & .devport-neon-button {
+
+          &:hover {
+
+            &:before {
+
+            }
+          }
+
+          &:before {
+
+          }
+        }
+      }
+
+      .track-login-href {
+
+      }
+    }
+    & .track-img-ctnr {
+
+      & img {
+
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+
+  .track-port {
+    & .btn-spotify {
+
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+
+    }
+    }
+
+    & .btn-spotify2 {
+
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+
+    }
+  }
+    & .track-about-ctnr {
+
+      & .h-ctnr {
+
+        h1 {
+
+        }
+      }
+
+      & .playback-controls {
+
+        h2 {
+          font-size: 0.8rem;
+        }
+      }
+
+      a {
+
+      }
+      & .devport-neon-button-ctnr {
+
+        & .devport-neon-button {
+
+          &:hover {
+
+            &:before {
+
+            }
+          }
+
+          &:before {
+
+          }
+        }
+      }
+
+      .track-login-href {
+
+      }
+    }
+    & .track-img-ctnr {
+
+      & img {
+
+      }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+
+  .track-port {
+    height: calc(47vw);
+    & .btn-spotify {
+
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+
+    }
+    }
+
+    & .btn-spotify2 {
+
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+
+    }
+  }
+    & .track-about-ctnr {
+
+      & .h-ctnr {
+
+        h1 {
+
+        }
+      }
+
+      & .playback-controls {
+
+        h2 {
+
+        }
+      }
+
+      a {
+
+      }
+      & .devport-neon-button-ctnr {
+
+        & .devport-neon-button {
+        font-size: 0.8rem;
+          &:hover {
+
+            &:before {
+
+            }
+          }
+
+          &:before {
+
+          }
+        }
+      }
+
+      .track-login-href {
+
+      }
+    }
+    & .track-img-ctnr {
+
+      & img {
+
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+
+  .track-port {
+    width: calc(40vw);
+    & .btn-spotify {
+
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+
+    }
+    }
+
+    & .btn-spotify2 {
+
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+
+    }
+  }
+    & .track-about-ctnr {
+      gap: 2rem;
+      & .h-ctnr {
+
+        h1 {
+
+        }
+      }
+
+      & .playback-controls {
+
+        h2 {
+
+        }
+      }
+
+      a {
+
+      }
+      & .devport-neon-button-ctnr {
+
+        & .devport-neon-button {
+        font-size: 0.8rem;
+          &:hover {
+
+            &:before {
+
+            }
+          }
+
+          &:before {
+
+          }
+        }
+      }
+
+      .track-login-href {
+
+      }
+    }
+    & .track-img-ctnr {
+
+      & img {
+
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+
+  .track-port {
+
+    & .btn-spotify {
+
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+
+    }
+    }
+
+    & .btn-spotify2 {
+
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+
+    }
+  }
+    & .track-about-ctnr {
+      gap: 2rem;
+      & .h-ctnr {
+
+        h1 {
+
+        }
+      }
+
+      & .playback-controls {
+
+        h2 {
+
+        }
+      }
+
+      a {
+
+      }
+      & .devport-neon-button-ctnr {
+
+        & .devport-neon-button {
+        font-size: 0.8rem;
+          &:hover {
+
+            &:before {
+
+            }
+          }
+
+          &:before {
+
+          }
+        }
+      }
+
+      .track-login-href {
+
+      }
+    }
+    & .track-img-ctnr {
+
+      & img {
+
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+
+  .track-port {
+
+    & .btn-spotify {
+
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+
+    }
+    }
+
+    & .btn-spotify2 {
+
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+
+    }
+  }
+    & .track-about-ctnr {
+      gap: 1rem;
+      & .h-ctnr {
+
+        h1 {
+
+        }
+      }
+
+      & .playback-controls {
+
+        h2 {
+
+        }
+      }
+
+      a {
+
+      }
+      & .devport-neon-button-ctnr {
+
+        & .devport-neon-button {
+
+          &:hover {
+
+            &:before {
+
+            }
+          }
+
+          &:before {
+
+          }
+        }
+      }
+
+      .track-login-href {
+
+      }
+    }
+    & .track-img-ctnr {
+
+      & img {
+
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+
+  .track-port {
+
+    & .btn-spotify {
+
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+
+    }
+    }
+
+    & .btn-spotify2 {
+
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+
+    }
+  }
+    & .track-about-ctnr {
+      gap: 0.2rem;
+      & .h-ctnr {
+
+        h1 {
+          font-size: 1.7rem;
+        }
+      }
+
+      & .playback-controls {
+
+        h2 {
+
+        }
+      }
+
+      a {
+
+      }
+      & .devport-neon-button-ctnr {
+
+        & .devport-neon-button {
+          font-size: 0.8rem;
+          &:hover {
+
+            &:before {
+
+            }
+          }
+
+          &:before {
+
+          }
+        }
+      }
+
+      .track-login-href {
+
+      }
+    }
+    & .track-img-ctnr {
+
+      & img {
+
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+
+  .track-port {
+
+    & .btn-spotify {
+
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+
+    }
+    }
+
+    & .btn-spotify2 {
+
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+
+    }
+  }
+    & .track-about-ctnr {
+      gap: 0.1px;
+      & .h-ctnr {
+
+        h1 {
+          font-size: 1.7rem;
+        }
+      }
+
+      & .playback-controls {
+
+        h2 {
+
+        }
+      }
+
+      a {
+
+      }
+      & .devport-neon-button-ctnr {
+
+        & .devport-neon-button {
+          font-size: 0.8rem;
+          height: 2rem;
+          &:hover {
+
+            &:before {
+
+            }
+          }
+
+          &:before {
+
+          }
+        }
+      }
+
+      .track-login-href {
+
+      }
+    }
+    & .track-img-ctnr {
+
+      & img {
+
+      }
     }
   }
 }

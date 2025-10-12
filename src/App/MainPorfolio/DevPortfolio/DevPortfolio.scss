@@ -15,16 +15,19 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
     border-radius: 20px;
+    & h1 {
+      text-shadow: 5px 5px 10px black;
+    }
     & .webport-searchbar {
           display: flex;
           align-items: center;
-          justify-content: space-between;
           background-color: #eaf1fb;
           padding: 0.3rem 1rem 0.3rem 1rem;
           border-radius: 25px;
           width: 20rem;
           height: 2.5rem;
           & input {
+            width: 80%;
             outline: none;
             border: none;
             background-color: inherit;
@@ -32,6 +35,7 @@
           }
 
           & button {
+            width: 20%;
             border: none;
             outline: none;
             background-color: inherit;
@@ -39,6 +43,7 @@
             align-items: center;
             cursor: pointer;
             height: 100%;
+            justify-content: center;
             & i {
               font-size: 1.8rem;
             }
@@ -68,7 +73,7 @@
   & .devport-projects-section {
       & .devport-projects-ctnr {
     display: grid;
-    grid-template-columns: repeat(5, 18rem);
+    grid-template-columns: repeat(5, calc(19vw));
     row-gap: 2rem;
     min-height: 80vh;
     padding-bottom: 2rem;
@@ -108,9 +113,958 @@
   }
     }
   }
+
+  & .devport-paginator {
+    & .MuiPaginationItem-root {
+      color: white,          
+    }
+    & .MuiPaginationItem-root.Mui-selected {
+      background-color: white;
+      color: black;          
+    }
+    & .MuiPaginationItem-root:hover {
+      background-color: rgba(255,255,255,0.2) 
+    }
+  }
   }
 
   & .webport-modal-project-content {
     background-color: black;
+  }
+}
+
+@media (max-width: 1000px) {
+  .webport-section {
+    h1 {
+      font-size: 2.3rem;
+    }
+
+    & .webport-form-ctnr {
+ 
+      & h1 {
+
+      }
+      & .webport-searchbar {
+        width: 18rem;
+            & input {
+
+            }
+
+            & button {
+
+              & i {
+
+              }
+            }
+      }
+      & .webport-filters-ctnr {
+
+        & label {
+
+          & span {
+
+          }
+        }
+        #filters-form {
+
+        }
+      }
+    }
+    & .devport-projects-section {
+      & .devport-projects-ctnr {
+
+        grid-template-columns: repeat(4, calc(23.5vw));
+
+      
+      & .devport-project-ctnr {
+        .project-dev {
+          & .project-about-ctnr {
+            & .devport-neon-button {
+            }
+            & div {
+
+              & h1 {
+              }
+
+            & .project-dev-icon-ctnr {
+
+              & .project-dev-icon {
+
+              }
+            }
+            }
+            & .devport-project-component-button {
+            }
+          }
+
+          & .project-img-ctnr {
+
+            & .img-modulator {
+
+              & img {
+
+              }
+            }
+
+          }
+
+          & .modulator {
+
+          }
+        }
+      }
+      & .devport-neon-button {
+
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+    }
+      }
+    }
+    }
+
+    & .webport-modal-project-content {
+
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .webport-section {
+    h1 {
+      font-size: 2rem;
+    }
+
+    & .webport-form-ctnr {
+ 
+      & h1 {
+
+      }
+      & .webport-searchbar {
+        align-items: center;
+        width: 15rem;
+        height: 2rem;
+            & input {
+
+            }
+
+            & button {
+
+              & i {
+                font-size: 1.5rem;
+              }
+            }
+      }
+      & .webport-filters-ctnr {
+
+        & label {
+          font-size: 1rem;
+          & span {
+
+          }
+        }
+        & #filters-form {
+          font-size: 15px;
+          & button {
+            font-size: 0.9rem;
+            height: 1.5rem;
+          }
+        }
+      }
+    }
+    & .devport-projects-section {
+      & .devport-projects-ctnr {
+
+        grid-template-columns: repeat(4, calc(23.5vw));
+
+      
+      & .devport-project-ctnr {
+        & .project-dev {
+          height: 17rem;
+          & .project-about-ctnr {
+            padding: 0;
+            & .devport-neon-button {
+              width: 5rem;
+              font-size: 1rem;
+              & .devport-neon-button-icon {
+                display: none;
+              }
+            }
+            & div {
+              & h1 {
+                margin-top: 0.5rem;
+                font-size: 1rem;
+              }
+
+            & .project-dev-icon-ctnr {
+              padding: 0.1rem;
+              height: fit-content;
+              & .project-dev-icon {
+                height: 2rem;
+              }
+            }
+            }
+            & .devport-project-component-button {
+
+            }
+          }
+
+          & .project-img-ctnr {
+
+            & .img-modulator {
+
+              & img {
+
+              }
+            }
+
+          }
+
+          & .modulator {
+
+          }
+        }
+      }
+      & .devport-neon-button {
+
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+    }
+      }
+    }
+    }
+
+    & .webport-modal-project-content {
+
+    }
+  }
+}
+
+@media (max-width: 770px) {
+  .webport-section {
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    & .webport-form-ctnr {
+ 
+      & h1 {
+
+      }
+      & .webport-searchbar {
+        width: 12rem;
+            & input {
+
+            }
+
+            & button {
+
+              & i {
+
+              }
+            }
+      }
+      & .webport-filters-ctnr {
+
+        & label {
+
+          & span {
+
+          }
+        }
+        & #filters-form {
+
+          & button {
+
+          }
+        }
+      }
+    }
+    & .devport-projects-section {
+      & .devport-projects-ctnr {
+
+
+      
+      & .devport-project-ctnr {
+        & .project-dev {
+
+          & .project-about-ctnr {
+            & .devport-neon-button {
+
+              & .devport-neon-button-icon {
+
+              }
+            }
+            & div {
+              & h1 {
+
+              }
+
+            & .project-dev-icon-ctnr {
+
+              & .project-dev-icon {
+                font-size: 1.9rem;;
+              }
+            }
+            }
+
+            & .devport-project-component-button {
+              width: 3rem;
+              font-size: 0.8rem !important;
+            }
+          }
+
+          & .project-img-ctnr {
+
+            & .img-modulator {
+
+              & img {
+
+              }
+            }
+
+          }
+
+          & .modulator {
+
+          }
+        }
+      }
+      & .devport-neon-button {
+
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+    }
+      }
+    }
+    }
+
+    & .webport-modal-project-content {
+
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .webport-section {
+    h1 {
+
+    }
+
+    & .webport-form-ctnr {
+ 
+      & h1 {
+
+      }
+      & .webport-searchbar {
+
+            & input {
+
+            }
+
+            & button {
+
+              & i {
+
+              }
+            }
+      }
+      & .webport-filters-ctnr {
+
+        & label {
+
+          & span {
+
+          }
+        }
+        & #filters-form {
+
+          & button {
+
+          }
+        }
+      }
+    }
+    & .devport-projects-section {
+      & .devport-projects-ctnr {
+        grid-template-columns: repeat(3, 30.5vw);
+
+      
+      & .devport-project-ctnr {
+        & .project-dev {
+
+          & .project-about-ctnr {
+            & .devport-neon-button {
+
+              & .devport-neon-button-icon {
+
+              }
+            }
+            & div {
+              & h1 {
+
+              }
+
+            & .project-dev-icon-ctnr {
+
+              & .project-dev-icon {
+
+              }
+            }
+            }
+
+            & .devport-project-component-button {
+
+            }
+          }
+
+          & .project-img-ctnr {
+
+            & .img-modulator {
+
+              & img {
+
+              }
+            }
+
+          }
+
+          & .modulator {
+
+          }
+        }
+      }
+      & .devport-neon-button {
+
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+    }
+      }
+    }
+    }
+
+    & .webport-modal-project-content {
+
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .webport-section {
+    h1 {
+      
+    }
+
+    & .webport-form-ctnr {
+ 
+      & h1 {
+        font-size: 1.2rem;
+      }
+      & .webport-searchbar {
+        width: 10rem;
+            & input {
+              &::placeholder {
+                font-size: 0.8rem;
+              }
+            }
+
+            & button {
+
+              & i {
+                font-size: 1rem;
+              }
+            }
+      }
+
+      & .dev-port-reset-btn {
+        width: 10rem;
+
+      }
+
+      & .webport-filters-ctnr {
+        width: 10rem;
+        & label {
+          font-size: 0.8rem;
+          & span {
+
+          }
+        }
+        & #filters-form {
+          & button {
+            width: 100%;
+          }
+        }
+      }
+    }
+    & .devport-projects-section {
+      & .devport-projects-ctnr {
+
+
+      
+      & .devport-project-ctnr {
+        & .project-dev {
+
+          & .project-about-ctnr {
+            & .devport-neon-button {
+
+              & .devport-neon-button-icon {
+
+              }
+            }
+            & div {
+              & h1 {
+
+              }
+
+            & .project-dev-icon-ctnr {
+
+              & .project-dev-icon {
+
+              }
+            }
+            }
+
+            & .devport-project-component-button {
+              font-size: 0.6rem !important;
+            }
+          }
+
+          & .project-img-ctnr {
+
+            & .img-modulator {
+
+              & img {
+
+              }
+            }
+
+          }
+
+          & .modulator {
+
+          }
+        }
+      }
+      & .devport-neon-button {
+        font-size: 0.8rem !important;
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+    }
+      }
+    }
+    & .devport-paginator {
+      & .MuiPaginationItem-root {
+      
+      }
+      & .MuiPaginationItem-root.Mui-selected {
+          transform: scale(0.9);
+      }
+      & .MuiPaginationItem-root:hover {
+
+      }
+    }
+    }
+
+    & .webport-modal-project-content {
+
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .webport-section {
+    & .webport-form-title {
+      display: none;
+    }
+
+    & .webport-form-ctnr {
+      padding-top: 2rem; 
+      padding-bottom: 2rem;
+      padding-right: 3rem;
+      padding-left: 3rem; 
+      & h1 {
+
+      }
+      & .webport-searchbar {
+
+            & input {
+              &::placeholder {
+
+              }
+            }
+
+            & button {
+
+              & i {
+
+              }
+            }
+      }
+
+      & .dev-port-reset-btn {
+
+
+      }
+
+      & .webport-filters-ctnr {
+
+        & label {
+
+          & span {
+
+          }
+        }
+        & #filters-form {
+          & button {
+
+          }
+        }
+      }
+    }
+    & .devport-projects-section {
+      & .devport-projects-ctnr {
+
+
+      
+      & .devport-project-ctnr {
+        & .project-dev {
+          height: 15rem;
+          & .project-about-ctnr {
+            & .devport-neon-button {
+
+              & .devport-neon-button-icon {
+
+              }
+            }
+            & div {
+              height: 45%;
+              & h1 {
+                font-size: 0.8rem;
+                height: fit-content;
+              }
+
+            & .project-dev-icon-ctnr {
+
+              & .project-dev-icon {
+                font-size: 1.5rem;
+                height: 1.5rem;
+              }
+            }
+            }
+
+            & .devport-project-component-button {
+
+            }
+          }
+
+          & .project-img-ctnr {
+
+            & .img-modulator {
+
+              & img {
+
+              }
+            }
+
+          }
+
+          & .modulator {
+
+          }
+        }
+      }
+      & .devport-neon-button {
+
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+    }
+      }
+    }
+    }
+
+    & .webport-modal-project-content {
+
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .webport-section {
+        padding-bottom: 2rem;
+    h1 {
+
+    }
+
+    & .webport-form-ctnr {
+      padding: 1rem 1rem 1rem 1rem;
+      margin-right: 3rem;
+      margin-left: 3rem;
+      & h1 {
+
+      }
+      & .webport-searchbar {
+
+            & input {
+              &::placeholder {
+
+              }
+            }
+
+            & button {
+
+              & i {
+
+              }
+            }
+      }
+
+      & .dev-port-reset-btn {
+
+
+      }
+
+      & .webport-filters-ctnr {
+
+        & label {
+
+          & span {
+
+          }
+        }
+        & #filters-form {
+          & button {
+
+          }
+        }
+      }
+    }
+    & .devport-projects-section {
+      margin-left: 3rem;
+      margin-right: 3rem;
+      & .devport-projects-ctnr {
+        grid-template-columns: repeat(2, calc(40vw));
+        column-gap: 0.5rem;
+      & .devport-project-ctnr {
+        & .project-dev {
+          height: 15rem;
+          & .project-about-ctnr {
+            gap: 2rem;
+            & .devport-neon-button {
+
+              & .devport-neon-button-icon {
+
+              }
+            }
+            & div {
+              height: fit-content;
+              & h1 {
+                font-size: 0.8rem;
+                height: fit-content;
+              }
+
+            & .project-dev-icon-ctnr {
+
+              & .project-dev-icon {
+                font-size: 2rem;
+                height: 2rem;
+              }
+            }
+            }
+
+            & .devport-project-component-button {
+              height: 3rem !important;
+              width: 7rem !important;
+              font-size: 0.7rem !important;
+            }
+          }
+
+          & .project-img-ctnr {
+
+            & .img-modulator {
+
+              & img {
+
+              }
+            }
+
+          }
+
+          & .modulator {
+
+          }
+        }
+      }
+      & .devport-neon-button {
+
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+    }
+      }
+    }
+    }
+
+    & .webport-modal-project-content {
+
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .webport-section {
+    h1 {
+
+    }
+
+    & .webport-form-ctnr {
+      & h1 {
+
+      }
+      & .webport-searchbar {
+
+            & input {
+              &::placeholder {
+
+              }
+            }
+
+            & button {
+
+              & i {
+
+              }
+            }
+      }
+
+      & .dev-port-reset-btn {
+
+
+      }
+
+      & .webport-filters-ctnr {
+        width: 8rem;
+        & label {
+          display: none;
+          & span {
+
+          }
+        }
+        & #filters-form {
+          & select {
+            font-size: 0.7rem;
+          }
+          & button {
+            font-size: 0.7rem;
+          }
+        }
+      }
+    }
+    & .devport-projects-section {
+      & .devport-projects-ctnr {
+
+      & .devport-project-ctnr {
+        & .project-dev {
+
+          & .project-about-ctnr {
+
+            & .devport-neon-button {
+
+              & .devport-neon-button-icon {
+
+              }
+            }
+            & div {
+
+              & h1 {
+
+              }
+
+            & .project-dev-icon-ctnr {
+              display: none;
+              & .project-dev-icon {
+
+              }
+            }
+            }
+
+            & .devport-project-component-button {
+
+            }
+          }
+
+          & .project-img-ctnr {
+
+            & .img-modulator {
+
+              & img {
+
+              }
+            }
+
+          }
+
+          & .modulator {
+
+          }
+        }
+      }
+      & .devport-neon-button {
+
+    &:hover {
+
+      &:before {
+
+      }
+    }
+
+    &:before {
+    }
+      }
+    }
+    }
+
+    & .webport-modal-project-content {
+
+    }
   }
 }

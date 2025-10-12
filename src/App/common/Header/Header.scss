@@ -64,5 +64,235 @@
       }
     }
   }
+
+  & .app-icon-ctnr {
+    display: none;
+    outline: solid $hover-color 2px;
+    align-items: center;
+    border-radius: 10px;
+    padding: 0.2rem;
+    & span {
+      color: $hover-color;
+      cursor: pointer;
+    }
+  }
 }
 
+
+@media (max-width: 770px) {
+  .global-header-wrapper {
+    position: relative;
+    & .header-left {
+      & .header-left-link-el {
+          
+          
+          
+          & span {
+          
+          }
+      }
+    }
+
+    & .header-right {
+      & ul {
+      
+        & li {
+      
+          & a {
+      
+            &:hover {
+      
+            }
+          }
+      
+          &:hover {
+      
+          }
+        }
+      }
+
+      & button {
+      
+
+      }
+    }
+  
+  & .header-right-responsive {
+    z-index: 1000 !important;
+    position: absolute;
+    top: -500px;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    background-color: $black-footer;
+    display: flex;
+    gap: 0.5rem;
+    min-height: 43px;
+    transition: all 0.5s;
+    & ul {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-direction: column;
+      padding: 1rem;
+      & li {
+        list-style-type: none;
+        cursor: pointer;
+        transition: all 0.2s;
+        & a {
+          color: white;
+          transition: all 0.2s;
+          &:hover {
+            color: $hover-color;
+            text-shadow: $font-neon-text-shadow;
+          }
+        }
+        color: white;
+        @include ubuntu-bold;
+        &:hover {
+            color: $hover-color;
+            text-shadow: $font-neon-text-shadow;
+        }
+      }
+      & button {
+        display: flex;
+        align-items: center;
+        gap: 0.1rem;
+        border-radius: 25px;
+        padding: 0.4rem;
+        cursor: pointer;
+        transition:  0.5s;
+        &:hover {
+          background-color: $hover-color;
+        }
+        &:active {
+          outline: solid 1px black;
+          background-color: $blue-fb;
+        }
+      }
+    } 
+  }
+
+  & .header-right-visible {
+    top: 100%;
+  }
+
+  & .app-icon-ctnr {
+    display: flex;
+    transition: transform 0.5s;
+  }  
+
+  & .app-icon-ctnr-rotate {
+        transform: rotate(-180deg);
+  }
+  }
+}
+
+@media (max-width: 450px) {
+  .global-header-wrapper {
+    position: relative;
+    & .header-left {
+      & .header-left-link-el {
+          
+          
+          
+          & span {
+          
+          }
+      }
+    }
+
+    & .header-right {
+      & ul {
+      
+        & li {
+      
+          & a {
+      
+            &:hover {
+      
+            }
+          }
+      
+          &:hover {
+      
+          }
+        }
+      }
+
+      & button {
+      
+
+      }
+    }
+  
+  & .header-right-responsive {
+    z-index: 1000 !important;
+    position: absolute;
+    top: -500px;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    background-color: $black-footer;
+    display: flex;
+    gap: 0.5rem;
+    min-height: 43px;
+    transition: all 0.5s;
+    & ul {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-direction: column;
+      padding: 1rem;
+      & li {
+        list-style-type: none;
+        cursor: pointer;
+        transition: all 0.2s;
+        & a {
+          color: white;
+          transition: all 0.2s;
+          &:hover {
+            color: $hover-color;
+            text-shadow: $font-neon-text-shadow;
+          }
+        }
+        color: white;
+        @include ubuntu-bold;
+        &:hover {
+            color: $hover-color;
+            text-shadow: $font-neon-text-shadow;
+        }
+      }
+      & button {
+        display: flex;
+        align-items: center;
+        gap: 0.1rem;
+        border-radius: 25px;
+        padding: 0.4rem;
+        cursor: pointer;
+        transition:  0.5s;
+        &:hover {
+          background-color: $hover-color;
+        }
+        &:active {
+          outline: solid 1px black;
+          background-color: $blue-fb;
+        }
+      }
+    } 
+  }
+
+  & .header-right-visible {
+    top: 100%;
+  }
+
+  & .app-icon-ctnr {
+    display: flex;
+    transition: transform 0.5s;
+  }  
+
+  & .app-icon-ctnr-rotate {
+        transform: rotate(-180deg);
+  }
+}
+}

@@ -17,7 +17,8 @@ type PropTypes = {
 function SearchForm({setProjects, reducer, portGallery, searchBarRef, optionFiltersRef}: PropTypes) {
   const OptionsArray = ['php', 'reactprojects', 'projects', 'node', 'excelpowerpoint', 'angular']
   
-  return (      <div className="webport-form-ctnr">
+  return (      
+        <div className="webport-form-ctnr">
           <div style={{
             display: 'flex',
             flexDirection: 'column',
@@ -50,11 +51,11 @@ function SearchForm({setProjects, reducer, portGallery, searchBarRef, optionFilt
              portGallery,
              actionTypes
             }}
-            classString={'btn3'}
+            classString={'btn3 dev-port-reset-btn'}
             buttonText={'Reset Flters'}
           />
           </div>
-          <h1><span>W</span>eb <span>D</span>ev <span>P</span>rojects</h1>
+          <h1 className="webport-form-title"><span>W</span>eb <span>D</span>ev <span>P</span>rojects</h1>
           <div className="webport-filters-ctnr">
             <label htmlFor="filters-form"><span>F</span>ilters</label>
             <form onSubmit={(e) => {

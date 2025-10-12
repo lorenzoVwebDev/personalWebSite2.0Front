@@ -1,8 +1,7 @@
-import { Outlet, createPath, Link, useLocation, useNavigate } from 'react-router'
+import { useEffect } from 'react'
+import { Outlet, createPath, useLocation, useNavigate } from 'react-router'
 import './MainPortfolio.scss'
 //component
-import DevPortfolio from './DevPortfolio/DevPortfolio'
-import MusicPortfolio from './MusicPortfolio/MusicPortfolio'
 import BackLinksComponent from '@common/BacklinksComponent/BacklinksComponent'
 import { splitPathCreator } from '@utils/routingFunctions'
 import { type OutletContextType } from '@types/types'
@@ -14,6 +13,10 @@ function MainPortfolio() {
   if (location.pathname.endsWith('/')) {
     path = location.pathname.slice(0, location.pathname.length-1)
   }
+
+    useEffect(() => {
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }, [])
 
   path = splitPathCreator(path)
 

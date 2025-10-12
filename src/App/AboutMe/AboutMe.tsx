@@ -1,4 +1,4 @@
-import { type ReactElement } from 'react';
+import { type ReactElement, useEffect } from 'react';
 import arrays from "http://localhost:3000/scripts/arrays"
 import NeonButton from '@common/NeonButton/NeonButton';
 import { type JobsType } from '@types/types';
@@ -7,10 +7,11 @@ import downloadResume from '@services/downloadResume'
 import './AboutMe.scss'
 
 function AboutMe(): ReactElement {
-
-  console.log(arrays)
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [])
   return (
-    <>
+    <div className="about-ctnr">
       <section id="main" className="about-abstract-section">
         <div className="about-abstract-ctnr">
           <h1><span>J</span>ob's <span>E</span>xperience <span>H</span>ystory</h1>
@@ -46,7 +47,7 @@ function AboutMe(): ReactElement {
         {
           arrays.jobsDone.map((job: JobsType, index: number) => {
             return (
-            <div className="about-jobs-ctnr" key={index}>
+            <div className="about-jobs-ctnr" key={index} id={`${index}-job`}>
               <div className="about-jobs-description-ctnr">
                 <h1>{job.name}</h1>
                 <p>{job.description}</p>
@@ -58,7 +59,7 @@ function AboutMe(): ReactElement {
           })
         }
       </section>
-    </>  
+    </div>  
   )
 }
 

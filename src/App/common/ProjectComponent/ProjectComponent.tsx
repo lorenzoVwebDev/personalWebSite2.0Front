@@ -4,7 +4,10 @@ import { type PortObject } from "../../../types/types";
 import { createBlobObject } from "../../utils/blobParsing";
 import NeonButton from "../NeonButton/NeonButton";
 import './ProjectComponent.scss'
-//
+//react icons
+import { FaReact, FaAngular, FaNode, FaPhp, FaHtml5  } from "react-icons/fa";
+import { BsMicrosoft } from "react-icons/bs";
+
 type PropTypes = {
   project: PortObject,
   index: number,
@@ -21,17 +24,30 @@ function ProjectComponent({project, index, parentComponent, children}: PropTypes
         <div className="project-dev" key={index}>
         <div className="project-about-ctnr">
             {children && children}
+            <div>
             <h1>{project.header}</h1>
-            <p>{project.description}</p>
+              <div className="project-dev-icon-ctnr">
+              {project.type === "node" ? 
+                <FaNode 
+                  className="project-dev-icon"
+                /> : project.type === "excelpowerpoint" ? <BsMicrosoft 
+                  className="project-dev-icon"
+                /> : project.type === "php" ? <FaPhp
+                className="project-dev-icon"
+                /> : project.type === "projects" ? <FaHtml5 
+                  className="project-dev-icon"
+                /> : project.type === "reactprojects" ?  <FaReact 
+                  className="project-dev-icon"
+                />: project.type === "angular" ? <FaAngular 
+                  className="project-dev-icon"
+                /> : ""}
+              </div>
+            </div>
             <NeonButton
               action={window.open}
               actionParameters={project.href}
               buttonText={'Go To Project'}
-              classString={'btn'}
-              style={{
-                width: '15rem',
-                height: '3rem',
-              }}
+              classString={'devport-project-component-button'}
             />
         </div>
         <div className="project-img-ctnr">

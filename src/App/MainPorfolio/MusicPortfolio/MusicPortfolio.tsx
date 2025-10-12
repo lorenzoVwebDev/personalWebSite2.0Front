@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import SpotifySdkTokenProvider, {tokensObject} from '@context/SpotifySdkProvider';
 import { connectSpotifySdk } from '@services/spotifyServices';
 import { type SpotifySdkContextType, type TrackType } from '../../../types/types';
@@ -127,6 +127,11 @@ return (
     contextState={token}
   >
     <h1 className="musicport-title"><span>M</span>usic <span>P</span>ortfolio</h1>
+    <div style={{
+      display: "flex",
+      justifyContent: "center"
+
+    }} className="musicport-tracks-parent-ctnr">
     <div className="musicport-tracks-ctnr">
     {
       tracks && tracks.map((track: TrackType, index: number) => {
@@ -140,6 +145,7 @@ return (
         />
       })
     }
+    </div>
     </div>
   </SpotifySdkTokenProvider>
 );
