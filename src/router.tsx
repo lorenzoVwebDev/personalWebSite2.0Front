@@ -6,11 +6,13 @@ import MusicPortfolio from "./App/MainPorfolio/MusicPortfolio/MusicPortfolio";
 import DevPortfolio from "./App/MainPorfolio/DevPortfolio/DevPortfolio";
 import Contacts from "./App/Contacts/Contacts";
 import AboutMe from "./App/AboutMe/AboutMe";
+import { ErrorBoundary } from "./ErrorBoundary";
 
 const router = createBrowserRouter([
   {
     path: '/',
     Component: App,
+    ErrorBoundary: ErrorBoundary,
     children:  [
       {index: true, Component: HomeComponent}, 
       {
