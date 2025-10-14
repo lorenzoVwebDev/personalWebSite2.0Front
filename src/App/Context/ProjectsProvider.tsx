@@ -19,20 +19,22 @@ const ProjectsProvider = ({children}: ChildrenType) => {
 
   useEffect(() => {
     async function fetchProjects() {
-      const projectJson: string | null = await localForage.getItem('projectsJson')
-
-      if (projectJson) return setProjects(JSON.parse(projectJson))
-   
-      const response = await fetch('http://localhost:3000/upload/project')
+      const projectJson: string | null = await localForage.getItem('projectsJson');
+      if (projectJson != null) {
+        const parsedProjectJson = JSON.parse(projectJson);
+        if (parsedProjectJson.length > 0) return setProjects(parsedProjectJson)
+      } else {
+      const response = await fetch(`${import.meta.env.VITE_DEV_API}upload/project`)
       if (response.status >= 200 && response.status < 400) {
         const json = await response.json()
         const data = JSON.stringify(json)
         localForage.setItem('projectsJson', data)
+        setProjects(json)
       } else {
         console.error(response)
       }
+      }
     }
-
     fetchProjects()
 
     return () => {}

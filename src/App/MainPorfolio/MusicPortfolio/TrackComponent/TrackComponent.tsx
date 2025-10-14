@@ -94,7 +94,7 @@ function TrackComponent({track, device_id, token, is_paused, trackPlaying}: Prop
               
             }
             </div>
-            : <a href="http://localhost:3000/spotify/auth/login" className="track-login-href">Spotify Login</a>}
+            : <a href={`${import.meta.env.VITE_DEV_API}spotify/auth/login`} className="track-login-href">Spotify Login</a>}
             <div className="devport-neon-button-ctnr">
             <button onClick={() => {
               openModalFunc(setOpenModal)

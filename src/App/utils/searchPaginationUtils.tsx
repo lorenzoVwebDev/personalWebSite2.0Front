@@ -28,6 +28,6 @@
       const tasksStartingIndex = pageIndex === 0 ? 0 : pageIndex * itemsPerPage;
       const tasksEndingIndex = tasksStartingIndex + itemsPerPage;
       const copiedProjects = Object.create(projectsArray)
-      const tasks = copiedProjects.splice(tasksStartingIndex, tasksEndingIndex);
+      const tasks = copiedProjects.slice(tasksStartingIndex, tasksEndingIndex);
       return tasks
     }

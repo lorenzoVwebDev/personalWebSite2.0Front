@@ -7,6 +7,7 @@ import downloadResume from '@services/downloadResume'
 import './AboutMe.scss'
 
 function AboutMe(): ReactElement {
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [])
@@ -39,7 +40,7 @@ function AboutMe(): ReactElement {
         </div>
 
         <div className="about-abstract-img-ctnr">
-            <img className="personal-home-image" src="http://localhost:3000/images/home-page-personal.jpg" fetchPriority='high'/>
+            <img className="personal-home-image" src={`${import.meta.env.VITE_DEV_API}images/home-page-personal.jpg`} fetchPriority='high'/>
         </div>
       </section>
 
