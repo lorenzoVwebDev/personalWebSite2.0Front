@@ -82,7 +82,7 @@ function JobsCarousel({jobsDone}: PropTypes) {
         </div>
 
         <div className="job-img-ctnr">
-          <img src={`${import.meta.env.VITE_DEV_API}images/jobs/${job.image}`} alt=""/>
+          <img src={`${import.meta.env.VITE_DEV_API}images/jobs/${job.image}`} alt="job-image"/>
         </div>
       </div> 
       )

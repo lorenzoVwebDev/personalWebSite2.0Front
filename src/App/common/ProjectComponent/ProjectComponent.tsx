@@ -51,7 +51,7 @@ function ProjectComponent({project, index, parentComponent, children}: PropTypes
             />
         </div>
         <div className="project-img-ctnr">
-            <img src={blobObject}/>
+            <img src={blobObject} alt={`${project.header}`}/>
         </div>
         <div className="modulator"></div>
       </div>               
@@ -64,7 +64,7 @@ function ProjectComponent({project, index, parentComponent, children}: PropTypes
             <h1>{project.header}</h1>
         </div>
         <div className="project-img-ctnr">
-          <img src={blobObject}/>
+          <img src={blobObject} alt={`${project.header}`}/>
         </div>
       </div>               
       ) 

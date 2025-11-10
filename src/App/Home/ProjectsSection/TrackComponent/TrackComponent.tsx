@@ -15,7 +15,7 @@ function TrackComponent({track, index}: PropTypes): React.ReactElement {
             <h1>{track.name}</h1>
         </div>
         <div className="track-img-ctnr">
-          <img src={track.album.images[0].url}/>
+          <img src={track.album.images[0].url} alt={`${track.album.name}`}/>
         </div>
       </div> 
               

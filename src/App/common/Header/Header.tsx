@@ -67,13 +67,13 @@ function Header() {
         <li onClick={() => {
           applyVisibleNavBar(headerRightRef, appIconRef)
         }}>Merchandising</li>
-              <button>
+      </ul>
+      <button>
       <i className="bi bi-person-circle fs-3" style={{
         fontSize: '1.5rem'
       }}></i>
         Sign In
       </button>
-      </ul>
     </div>
     <div className="app-icon-ctnr" onClick={() => applyVisibleNavBar(headerRightRef, appIconRef)} ref={appIconRef}>
       {isVisible ? <Icon>close</Icon> : <Icon>menu</Icon>}

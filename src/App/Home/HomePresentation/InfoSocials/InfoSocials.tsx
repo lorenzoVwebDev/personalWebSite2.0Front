@@ -58,7 +58,7 @@ function InfoSocials() {
       {
         SocialsArray.map((social, index) => {
           return (
-            <a href={social.link} key={index} target="_blank"><i className={`bi bi-${social.name}`}></i></a>
+            <a href={social.link} key={index} target="_blank" aria-label={social.name}><i className={`bi bi-${social.name}`}></i></a>
           )
         })
       }
