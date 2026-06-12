@@ -7,6 +7,7 @@
       }
       const byteArray = new Uint8Array(byteNumbers);
       const blob = new Blob([byteArray], {type: 'image/png'});
+
       const blobUrl = URL.createObjectURL(blob)
       return blobUrl
     } catch (error) {

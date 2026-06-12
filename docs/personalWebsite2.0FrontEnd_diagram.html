@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>personalWebsite2.0FrontEnd — Folder Diagram</title>
+  <style>body{font-family:Segoe UI,Arial,sans-serif;margin:16px} .mermaid{max-width:100%;overflow:auto}</style>
+</head>
+<body>
+  <h2>personalWebsite2.0FrontEnd — Folder Diagram</h2>
+  <div class="mermaid">
+flowchart TD
+  root["personalWebsite2.0FrontEnd"]
+  root --> env[".env"]
+  root --> gitignore[".gitignore"]
+  root --> package_json["package.json"]
+  root --> index_html["index.html"]
+  root --> vite_config["vite.config.ts"]
+  root --> tsconfig["tsconfig.json / tsconfig.*.json"]
+  root --> readme["README.md"]
+  root --> public_dir["public/"]
+  root --> src_dir["src/"]
+
+  subgraph SRC [src]
+    SRC_main_tsx["main.tsx"]
+    SRC_main_scss["main.scss"]
+    SRC_router["router.tsx"]
+    SRC_error["ErrorBoundary.tsx / .scss"]
+    SRC_viteenv["vite-env.d.ts"]
+    SRC_App["App/"]
+    SRC_assets["assets/"]
+    SRC_style["style/"]
+    SRC_types["types/"]
+    SRC --> SRC_main_tsx
+    SRC --> SRC_main_scss
+    SRC --> SRC_router
+    SRC --> SRC_error
+    SRC --> SRC_viteenv
+    SRC --> SRC_App
+    SRC --> SRC_assets
+    SRC --> SRC_style
+    SRC --> SRC_types
+  end
+
+  root ---> SRC
+
+  subgraph APP [App]
+    APP_App_tsx["App.tsx"]
+    APP_App_scss["App.scss"]
+    APP_AboutMe["AboutMe/"]
+    APP_common["common/"]
+    APP_Contacts["Contacts/"]
+    APP_Context["Context/"]
+    APP_Home["Home/"]
+    APP_Hooks["Hooks/"]
+    APP_MainPortfolio["MainPorfolio/"]
+    APP_services["services/"]
+    APP_utils["utils/"]
+
+    APP --> APP_App_tsx
+    APP --> APP_App_scss
+    APP --> APP_AboutMe
+    APP --> APP_common
+    APP --> APP_Contacts
+    APP --> APP_Context
+    APP --> APP_Home
+    APP --> APP_Hooks
+    APP --> APP_MainPortfolio
+    APP --> APP_services
+    APP --> APP_utils
+  end
+
+  SRC_App --> APP
+
+  subgraph COMMON [common]
+    C_index["index.tsx"]
+    C_Backlinks["BacklinksComponent/"]
+    C_Footer["Footer/"]
+    C_Header["Header/"]
+    C_Neon["NeonButton/"]
+    C_Project["ProjectComponent/"]
+    C_Submit["SubmitNeonButton/"]
+
+    COMMON --> C_index
+    COMMON --> C_Backlinks
+    COMMON --> C_Footer
+    COMMON --> C_Header
+    COMMON --> C_Neon
+    COMMON --> C_Project
+    COMMON --> C_Submit
+  end
+
+  APP_common --> COMMON
+
+  subgraph CONTEXT [Context]
+    CT_Projects["ProjectsProvider.tsx"]
+    CT_SpotifyAuth["SpotifyAuthProvider.tsx"]
+    CT_SpotifySdk["SpotifySdkProvider.tsx"]
+  end
+  APP_Context --> CONTEXT
+
+  subgraph HOME [Home]
+    H_Home_tsx["Home.tsx"]
+    H_Presentation["HomePresentation/"]
+    H_Jobs["JobsCarousel/"]
+    H_Projects["ProjectsSection/"]
+  end
+  APP_Home --> HOME
+
+  subgraph HomePresentation [HomePresentation]
+    HP_Pres_tsx["HomePresentation.tsx"]
+    HP_InfoSocials["InfoSocials/"]
+  end
+  H_Presentation --> HomePresentation
+
+  subgraph JobsCarousel [JobsCarousel]
+    JC_tsx["JobsCarousel.tsx"]
+  end
+  H_Jobs --> JobsCarousel
+
+  subgraph ProjectsSection [ProjectsSection]
+    PS_tsx["ProjectsSection.tsx"]
+    PS_Track["TrackComponent/"]
+  end
+  H_Projects --> ProjectsSection
+
+  subgraph TrackComponent [TrackComponent]
+    T_tsx["TrackComponent.tsx"]
+  end
+  PS_Track --> TrackComponent
+
+  subgraph HOOKS [Hooks]
+    HK_search["useSearchFilters.tsx"]
+    HK_spotify["useSpotifyAuth.tsx"]
+  end
+  APP_Hooks --> HOOKS
+
+  subgraph MAINPORTFOLIO [MainPorfolio]
+    MP_Main_tsx["MainPortfolio.tsx"]
+    MP_Dev["DevPortfolio/"]
+    MP_Music["MusicPortfolio/"]
+  end
+  APP_MainPortfolio --> MAINPORTFOLIO
+
+  subgraph DevPortfolio [DevPortfolio]
+    DP_tsx["DevPortfolio.tsx"]
+    DP_InfoModal["InfoModal/"]
+    DP_SearchForm["SearchForm/"]
+  end
+  MP_Dev --> DevPortfolio
+
+  subgraph MusicPortfolio [MusicPortfolio]
+    MU_tsx["MusicPortfolio.tsx"]
+    MU_TrackComp["TrackComponent/"]
+    MU_InfoModal["InfoModal/"]
+  end
+  MP_Music --> MusicPortfolio
+
+  subgraph SERVICES [services]
+    S_download["downloadResume.tsx"]
+    S_spotify["spotifyServices.tsx"]
+  end
+  APP_services --> SERVICES
+
+  subgraph UTILS [utils]
+    U_blob["blobParsing.tsx"]
+    U_routing["routingFunctions.tsx"]
+    U_search["searchPaginationUtils.tsx"]
+    U_style["styleUtils.tsx"]
+  end
+  APP_utils --> UTILS
+
+  subgraph STYLE [style]
+    ST_media["_media.scss"]
+    ST_mixin["_mixin.scss"]
+  end
+  SRC_style --> STYLE
+
+  subgraph TYPES [types]
+    TY_types["types.tsx"]
+  end
+  SRC_types --> TYPES
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true, theme:'default', securityLevel: 'loose'});</script>
+</body>
+</html>

@@ -36,12 +36,9 @@ function Header() {
       if (headerCtnrRef.current?.scrollWidth >= 770) {
 
         removeVisibleNavBar(headerRightRef, appIconRef);
-        console.log(isVisible)
       }
     })
   }, [isVisible])
-/*   const headerWidth = headerCtnrRef.current?.scrollWidth 
-  console.dir(headerCtnrRef.current) */
 
   return (
   <header className="global-header-wrapper" ref={headerCtnrRef}>
