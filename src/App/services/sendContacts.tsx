@@ -16,6 +16,7 @@ async function sendContacts(data: FieldValues): Promise<boolean> {
         method: "POST",
         body: JSON.stringify(data),
         credentials: "omit",
+        cache: "no-store",
         headers: {
             "Content-Type": "application/json"
         } 
