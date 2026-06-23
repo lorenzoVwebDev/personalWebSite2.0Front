@@ -58,3 +58,14 @@ export function connectSpotifySdk(setDevice_id, setTrack, setPaused, tokenObj) {
 
   };
 }
+
+export async function getMusicGenres(spotifyToken: string) {
+  const response = await fetch("https://api.spotify.com/v1/recommendations/available-genre-seeds", 
+    {
+      "method": "GET",
+      "headers": {
+        "Authorization": `Bearer ${spotifyToken}` 
+      }
+    }
+  )
+}

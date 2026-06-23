@@ -6,6 +6,8 @@ import MusicPortfolio from "./App/MainPorfolio/MusicPortfolio/MusicPortfolio";
 import DevPortfolio from "./App/MainPorfolio/DevPortfolio/DevPortfolio";
 import Contacts from "./App/Contacts/Contacts";
 import AboutMe from "./App/AboutMe/AboutMe";
+import SignIn from "./App/common/Authentication/SignIn/SignIn";
+import SignUp from "./App/common/Authentication/SignUp/SignUp";
 import { ErrorBoundary } from "./ErrorBoundary";
 
 const router = createBrowserRouter([
@@ -28,7 +30,14 @@ const router = createBrowserRouter([
       }, {
         path: '/aboutme',
         Component: AboutMe
+      }, {
+        path: '/authentication',
+        children: [
+          {path: 'signin', Component: SignIn},
+          {path: 'signup', Component: SignUp}
+        ]
       }
+      
     ]
   }
 ])

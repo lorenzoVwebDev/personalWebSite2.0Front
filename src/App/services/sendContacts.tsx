@@ -7,19 +7,22 @@ interface DataInterface {
     comment?: string
 }
 async function sendContacts(data: FieldValues): Promise<boolean> {
-
     const alphaRegexp = /^[A-Za-z]+$/;
     const emailRegexp = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
-    // if (!alphaRegexp.test(data.first_name) || !alphaRegexp.test(data.last_name) || !emailRegexp.test(data.email)) return;
-        console.log("hello")
-    const response = await fetch(`${import.meta.env.VITE_DEV_API}contacts`, {
+    
+    const endPoint = data.request_type === "Select a request" ? "plain" : data.request_type
+    const formData = new FormData()
+
+    Object.entries(data).forEach((entry, index) => {
+        if (entry[0] === "audio_file") formData.append(entry[0], entry[1][0])
+        else formData.append(entry[0], entry[1])
+    })
+
+    const response = await fetch(`${import.meta.env.VITE_DEV_API}contacts/${endPoint}`, {
         method: "POST",
-        body: JSON.stringify(data),
-        credentials: "omit",
-        cache: "no-store",
-        headers: {
-            "Content-Type": "application/json"
-        } 
+        body: formData,
+        credentials: "same-origin",
+        cache: "no-store"
     })
 
     if (response.ok) {

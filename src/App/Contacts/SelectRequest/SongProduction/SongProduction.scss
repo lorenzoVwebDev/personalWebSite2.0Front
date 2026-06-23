@@ -1,0 +1,50 @@
+@use "../../../../style/mixin" as *;
+
+.song-production-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    & .song-production-title-container {
+        display: flex;
+        gap: 1rem;
+
+        & button {
+            background-color: inherit;
+            border: none;
+            cursor: pointer;
+        }
+    }
+
+    & .song-production-specification-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    & .song-production-phone-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        & div:nth-child(1) {
+            & .PhoneInput {
+                width: 60%;
+            }
+        }
+
+
+        & div:nth-child(2) {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            
+            & label {
+                width: 1
+                30%;
+            }
+
+            & input {
+                width: 1.5rem;
+                cursor: pointer;
+            }
+        }
+    }
+}

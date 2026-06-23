@@ -1,0 +1,34 @@
+@use '../../../../style/mixin' as *;
+
+.sign-up-container {
+    display: flex;
+
+    & .sign-up-form-section {
+        flex: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+        & form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            & .sign-up-input-ctnr {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+
+    & .sign-up-image-section {
+        flex: 50%;
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
