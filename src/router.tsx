@@ -8,6 +8,7 @@ import Contacts from "./App/Contacts/Contacts";
 import AboutMe from "./App/AboutMe/AboutMe";
 import SignIn from "./App/common/Authentication/SignIn/SignIn";
 import SignUp from "./App/common/Authentication/SignUp/SignUp";
+import Error500 from "./App/common/Error500/Error500";
 import { ErrorBoundary } from "./ErrorBoundary";
 
 const router = createBrowserRouter([
@@ -39,6 +40,9 @@ const router = createBrowserRouter([
       }
       
     ]
+  }, {
+    path: '/servererror',
+    Component: Error500
   }
 ])
 
