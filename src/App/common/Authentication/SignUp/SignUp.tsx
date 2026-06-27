@@ -2,6 +2,7 @@ import "./SignUp.scss"
 import { useState } from "react";
 import { useForm } from "react-hook-form"
 import {BlinkBlur} from 'react-loading-indicators'
+import { useNavigate } from "react-router";
 //services
 import { signUp } from "../../../services/authenticationService";
 
@@ -11,12 +12,13 @@ const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\
 const MAX_SIZE_FILE = 2 * 1024 * 1024
 
 function SignUp() {
-    const [state, setState] = useState<string>()
-    const {register, handleSubmit, watch, formState} = useForm();
+    const [formResponse, setFormResponse] = useState<string | null>(null)
+    const {register, handleSubmit, reset, formState} = useForm();
+    let navigate = useNavigate();
 
     const handleFileChange = (e) => {
         const file = e.target.files[0]
-        console.log(file)
+
         switch (file.type) {
             case ("image/png"): {
                 break;
@@ -43,12 +45,29 @@ function SignUp() {
     return <div className="sign-up-container">
             <section className="sign-up-form-section">
                 <h1>Sign Up</h1>
-                {state === "waiting" ? <BlinkBlur color="#12f7ff" size="large" text="Loading" textColor="#12f7ff" /> :
-                <form onSubmit={handleSubmit(async (data) => {
-                        setState("waiting")
+                {formResponse === "duplicated" && <strong style={{color: "red"}}>USER DUPLICATED</strong>}
+                {formResponse === "waiting" ? <BlinkBlur color="#12f7ff" size="large" text="Loading" textColor="#12f7ff" /> : 
+                formResponse === "created" ? <p>User Created</p> : <form onSubmit={handleSubmit(async (data) => {
+                        setFormResponse("waiting")
                         const response = await signUp(data)
-                        if (response) setState("ready")
-                        else setState("error")
+                        switch (response) {
+                            case (200): {
+                                setFormResponse("created");
+                                setTimeout(() => {
+                                    navigate("/")
+                                    setFormResponse(null)
+                                }, 3000)
+                                break;
+                            }
+                            case (401): {
+                                window.location.reload()
+                                break;
+                            }
+                            case (409): {
+                                setFormResponse("duplicated")
+                                reset()
+                            }
+                        }
                     })}>
                     <div className="sign-up-input-ctnr">
                         <label htmlFor="sign-up-username">Username</label>
