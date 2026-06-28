@@ -13,3 +13,15 @@
     } catch (error) {
     }
   }
+
+  export const createBlobObjectFromBuffer = (buffer , mimeType: string) => {
+    console.log(mimeType)
+    try {
+      const byteArray = new Uint8Array(buffer);
+      const blob = new Blob([byteArray], {type: mimeType});
+
+      const blobUrl = URL.createObjectURL(blob)
+      return blobUrl
+    } catch (error) {
+    }
+  }

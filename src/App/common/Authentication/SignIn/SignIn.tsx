@@ -2,6 +2,7 @@ import "./SignIn.scss"
 import { useState } from "react";
 import { useForm } from "react-hook-form"
 import { signIn } from "../../../services/authenticationService";
+import { createBlobObjectFromBuffer } from "../../../utils/blobParsing";
 import {BlinkBlur} from 'react-loading-indicators'
 import { useNavigate } from "react-router";
 import { passwordRegex, usernameOrEmailRegex } from "../../../utils/regex";
@@ -10,6 +11,7 @@ import { passwordRegex, usernameOrEmailRegex } from "../../../utils/regex";
 function SignIn() {
     const navigate = useNavigate()
     const [formResponse, setFormResponse] = useState<string | null>(null)
+    const [url, setUrl] = useState<any>()
     const {register, handleSubmit, reset, formState} = useForm()
 
     return <div className="sign-in-container">
@@ -67,8 +69,9 @@ function SignIn() {
                 </div>
                 <button type="submit" disabled={formState.isValid ? false : true}>Send Data</button>    
             </form>
+
             </>
-            }    
+            } 
         </section>
         <section className="sign-in-img-section">
             <img src={`${import.meta.env.VITE_DEV_API}images/lwd-image.webp`} alt="" />
