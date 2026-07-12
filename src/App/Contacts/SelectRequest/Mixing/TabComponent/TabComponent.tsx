@@ -1,5 +1,6 @@
 import {useState} from "react" 
 import { Modal } from '@mui/material';
+import MixFeaturesModal from "./MixFeaturesModal/MixFeaturesModal";
 import './TabComponent.scss'
 
 type PropTypes = {
@@ -93,15 +94,19 @@ function TabComponent({tabType}: PropTypes) {
                     open={openModal}
                     aria-labelledby="project-info"
                 >
-                <div>hello</div>
+                <MixFeaturesModal
+                    setOpenModal={setOpenModal}
+                    openModal={openModal}
+                    tabType={tabType}
+                />
                 </Modal>
             </div>
 
     switch (tabType) {
         case ("tab2"):
-            return tabComponent({tabType: "Premium", price: 300, trackNumber: "unlimited", days: 10})
-        case ("tab3"):
             return tabComponent({tabType: "Standard", price: 200, trackNumber: 25, days: 10})
+        case ("tab3"):
+            return tabComponent({tabType: "Premium", price: 300, trackNumber: "unlimited", days: 10})
         default:
             return tabComponent({tabType: "Basic", price: 120, trackNumber: 10, days: 7})
 
