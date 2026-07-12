@@ -1,0 +1,23 @@
+@use '../../../../style/mixin' as *;
+
+.mixing-section {
+    & .mixing-tabs-container {
+        & input[type=radio] {
+            display: none;
+        }
+
+        & .mixing-tabs-navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            & label {
+                width: 40%;
+                border: 1px solid black;
+                cursor: pointer;
+                padding: 1rem;
+            }
+
+        }
+    }
+}

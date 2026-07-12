@@ -1,0 +1,26 @@
+@use '../../../../../style/mixin' as *;
+
+.tab-ctnr {
+    border: 1px solid black;
+    min-height: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    padding: 1rem;
+    gap: 1rem;
+    width: 100%;
+    & .tab-ctnr-delivery-wrapper {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    & .tab-ctnr-revisions-wrapper {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    & .tab-ctnr-fetures-list {
+        list-style-type: none;
+    }
+}
