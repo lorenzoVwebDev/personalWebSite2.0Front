@@ -6,6 +6,7 @@ interface DataInterface {
     email: string
     comment?: string
 }
+//
 async function sendContacts(data: FieldValues): Promise<boolean> {
     const alphaRegexp = /^[A-Za-z]+$/;
     const emailRegexp = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
