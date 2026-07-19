@@ -42,6 +42,7 @@ function Contacts() {
       <h1>Insert your data</h1>
       <FormProvider {...reactFormMethods}>
         <form onSubmit={reactFormMethods.handleSubmit((data) => {
+          console.log(data)
           sendContacts(data)
         })} encType='multipart/form-data'>
           {/*name, last-name, email*/}
@@ -58,16 +59,13 @@ function Contacts() {
             request={request} 
             setRequest={setRequest} 
             selectRequestOptions={selectRequestOptions}
-/*             register={register}
-            control={control}
-            resetField={resetField} */
           />}
           {/*text area*/}
           <div className="contacts-form-comment-container">
             <textarea {...reactFormMethods.register("comment", {required: false, maxLength: 300, pattern: noHtmlRegexp})} placeholder='Additional Information'>
             </textarea>
           </div>
-          <button type="submit">{request == null ? "Send Contacts" : "Send Your Song Request"}</button>
+          {request === "mix" ? null : <button type="submit">{request == null ? "Send Contacts" : "Send Your Song Request"}</button>}
         </form>
       </FormProvider>
     </div>

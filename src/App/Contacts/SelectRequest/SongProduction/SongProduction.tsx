@@ -67,7 +67,7 @@ function SongProduction({setRequest}: PropTypes) {
                 <Controller
                     control={control}
                     name="phone_number"
-                    render={({ field: { onChange, onBlur, value, ref } }) => (<PhoneInput
+                    render={({ field: { onChange, value } }) => (<PhoneInput
                     placeholder={"Enter mobile phone number"}
                     value={value}
                     defaultCountry="IT"

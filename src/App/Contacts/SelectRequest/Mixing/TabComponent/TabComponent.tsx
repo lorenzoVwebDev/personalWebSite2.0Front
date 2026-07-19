@@ -1,6 +1,6 @@
 import {useState} from "react" 
 import { Modal } from '@mui/material';
-import MixFeaturesModal from "./MixFeaturesModal/MixFeaturesModal";
+import MixFeaturesModal from "./MixOptionsModal/MixOptionsModal";
 import './TabComponent.scss'
 
 type PropTypes = {
@@ -98,6 +98,9 @@ function TabComponent({tabType}: PropTypes) {
                     setOpenModal={setOpenModal}
                     openModal={openModal}
                     tabType={tabType}
+                    price={price}
+                    trackNumber={trackNumber}
+                    days={days}
                 />
                 </Modal>
             </div>
