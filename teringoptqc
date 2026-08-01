@@ -1,0 +1,236 @@
+[33mcommit ff187d50100b9c9e9681fc0f14a5b66c235d5806[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mcontacts[m[33m, [m[1;31morigin/contacts[m[33m)[m
+Author: lorenzo viganego <lorenzoviganego.work@libero.it>
+Date:   Sun Jul 19 23:20:27 2026 +0200
+
+    Begin mastering part in contacts and fix user interface based on server response (waiting circles, redirection after 200 response etc.)
+
+[33mcommit b9dd800edc80756818e6dcd0e610beee7baf950d[m
+Author: lorenzo viganego <lorenzoviganego.work@libero.it>
+Date:   Sun Jul 19 23:19:16 2026 +0200
+
+    Begin mastering part in contacts and fix user interface based on server response
+
+[33mcommit fc6799f652be866bba02ed518cda53e91c1011a5[m
+Author: lorenzo viganego <lorenzoviganego.work@libero.it>
+Date:   Sun Jul 12 22:12:09 2026 +0200
+
+    continue MixFeaturesModal by inspiring it from fiverr's Order options
+
+[33mcommit a461aa943c9aaa6697ba4df65bd7aa81b21f2d14[m
+Author: lorenzo viganego <lorenzoviganego.work@libero.it>
+Date:   Sun Jul 12 14:47:20 2026 +0200
+
+    started mixing section, continue with specification modal
+
+[33mcommit dbe76fee2725bac9c8b36e50b479c8fb52add004[m
+Author: lorenzo viganego <lorenzoviganego.work@libero.it>
+Date:   Sun Jun 28 10:14:02 2026 +0200
+
+    updated sign in with new avatar blob parsing function, continue with contacts section 'mixing and mastering'
+
+[33mcommit 9dac23514827e569ebcd1b0f4b01e13a5a0befc9[m
+Author: lorenzo viganego <lorenzoviganego.work@libero.it>
+Date:   Sat Jun 27 20:15:57 2026 +0200
+
+    finished sign in
+
+[33mcommit e76fe07aacf07478d6a1d9388d8c3cb54eb7ea21[m
+Author: lorenzo viganego <lorenzoviganego.work@libero.it>
+Date:   Sat Jun 27 12:11:30 2026 +0200
+
+    finished sign up, complete sign in responses state change
+
+[33mcommit ec60c4008864f0cfb43432d7e8465edb79ac715a[m
+Author: lorenzo viganego <lorenzoviganego.work@libero.it>
+Date:   Tue Jun 23 16:17:34 2026 +0200
+
+    finish moongoos users model
+
+[33mcommit 70877048a277e81861441895d24d97f3d43b654b[m
+Author: lorenzo viganego <lorenzoviganego.work@libero.it>
+Date:   Sat Jun 13 12:40:55 2026 +0200
+
+    finished basic form
+
+[33mcommit 47e5e5a91d06a64719dba3a1d8ce2d2b7ea54b7f[m
+Author: lorenzo viganego <lorenzoviganego.work@libero.it>
+Date:   Fri Jun 12 22:47:17 2026 +0200
+
+    first contacts commit
+
+[33mcommit 14a5bbb83de6ad11582133f51064e45a742c7901[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Mon Nov 10 21:09:27 2025 +0100
+
+    improved wcv
+
+[33mcommit 082ad4ba1062bb1950eb4318ef4f3a3e0577c707[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Tue Oct 14 22:44:05 2025 +0200
+
+    update
+
+[33mcommit a964ec5ced03196afb0416d97585017dfe7d222c[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Mon Oct 13 15:42:36 2025 +0200
+
+    added error boundary
+
+[33mcommit 43583dddd0a6b272ee7a8f4791b12ce408adf359[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Mon Oct 13 08:33:51 2025 +0200
+
+    updated
+
+[33mcommit d21e0883a91e4df6b814c0d2b878416d112eb934[m
+Merge: e2d8f09 e3903ce
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Sun Oct 12 23:20:21 2025 +0200
+
+    u
+
+[33mcommit e2d8f098b236257ec2d9491fbc5c169b4d33c3f9[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Sun Oct 12 23:16:48 2025 +0200
+
+    updated
+
+[33mcommit e3903ce1bfad02c1228216571527d24297cc1520[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Sun Oct 12 23:15:04 2025 +0200
+
+    updated
+
+[33mcommit 59b83a48c21dfd0b9c16eac6ff569bb1fa7d1dd2[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Sun Oct 12 23:06:32 2025 +0200
+
+    u
+
+[33mcommit 2f9ed2ed073b078d628df2da8c7eabd1e60c4bd4[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Sun Oct 12 23:05:08 2025 +0200
+
+    u
+
+[33mcommit 6b452435456379e795cec227b4c022386835a875[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Sun Oct 12 23:03:11 2025 +0200
+
+    updated
+
+[33mcommit 6d930fe2867d323e45babae2d2480e25ec7ec0de[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Sun Oct 12 20:57:00 2025 +0200
+
+    finished home/aboutme/portfolios
+
+[33mcommit 04f51a53fd76151488afb7638dabd3ad7da27bc1[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Tue Sep 16 11:34:15 2025 +0200
+
+    updated
+
+[33mcommit 9a9ef9b6a6873bf6b6290c243e59e36e5180c972[m
+Merge: a741d7a ce3e09b
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Tue Sep 16 11:32:11 2025 +0200
+
+    Merge branch 'portfolios'
+
+[33mcommit ce3e09ba9ce62f605275e6b2d0931bf56453987b[m[33m ([m[1;32mportfolios[m[33m)[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Tue Sep 16 11:28:14 2025 +0200
+
+    updated
+
+[33mcommit 0e8893c93eb29eac8283d42a346dcb4ed5f5589b[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Sun Sep 7 12:50:17 2025 +0200
+
+    finished portfolios
+
+[33mcommit 63b90b523d9c9f058bcc2443c18b416fd57563a3[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Sat Aug 30 23:03:09 2025 +0200
+
+    finished web portfolio
+
+[33mcommit 259bb63413276cc98616106d72a9ec2d4296fa38[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Sat Aug 30 11:11:29 2025 +0200
+
+    first port commit
+
+[33mcommit d6a7f54b3df31f83ff37eafea701a0263923101d[m[33m ([m[1;32mhome[m[33m)[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Sat Aug 30 11:10:34 2025 +0200
+
+    updated
+
+[33mcommit a741d7a1dc08a2139cf0be1818267cf90381c09f[m
+Merge: 29849d9 ce0c045
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Thu Aug 28 23:37:38 2025 +0200
+
+    updated
+
+[33mcommit ce0c045fbf16f2710df34b48df1e35fbd5ce2778[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Thu Aug 28 23:27:33 2025 +0200
+
+    updated
+
+[33mcommit e71c443e0924d647c11f2e24a5ecd2b125039bf0[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Tue Aug 26 11:46:07 2025 +0200
+
+    updated home
+
+[33mcommit 034011020cdd491737711ee338a7d8bb1c1c36ae[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Mon Aug 25 22:09:57 2025 +0200
+
+    finished home
+
+[33mcommit 28ebf57f5754557e920e414829f8b353d0e0d49d[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Tue Aug 19 08:14:38 2025 +0200
+
+    updated home
+
+[33mcommit 071f21ffb007f8ae928516daa4a3a402da236785[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Mon Aug 18 21:14:46 2025 +0200
+
+    added resume download
+
+[33mcommit b915afdd823d034a3c0c1ec648462eaf964f3b2d[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Sun Jul 20 09:29:32 2025 +0200
+
+    updated home
+
+[33mcommit 29849d94f9f32caafde8a6d2880a62f39dea4370[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Sun Jul 20 09:28:34 2025 +0200
+
+    readme
+
+[33mcommit 8e1cff27f41a4d34cd1009acee71c24f3a7ac7a0[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Sun Jul 20 09:17:33 2025 +0200
+
+    first commit home
+
+[33mcommit 067d443a1dd7fc64ac8b94f99eac057bb192e942[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Sun Jul 20 09:15:05 2025 +0200
+
+    first home commit
+
+[33mcommit bdd76ed58c8727af846931f58d530a8c4583d3a5[m
+Author: lorenzoVwebDev <lorenzoviganego.work@libero.it>
+Date:   Sun Jul 20 09:13:58 2025 +0200
+
+    first commit

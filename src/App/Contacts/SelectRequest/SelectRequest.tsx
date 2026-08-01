@@ -7,6 +7,7 @@ import "./SelectRequest.scss"
 
 const SongProduction = lazy(() => import("./SongProduction/SongProduction"))
 const Mixing = lazy(() => import("./Mixing/Mixing"))
+const Mastering = lazy(() => import("./Mastering/Mastering.tsx"))
 
 type PropTypes = {
     request: string | null,
@@ -35,7 +36,6 @@ function SelectRequest({request, setRequest, selectRequestOptions}: PropTypes) {
             </select>
         </div></> 
     : request === "production" ? 
-    request === "production" &&
     <Suspense>
         <SongProduction
         setRequest={setRequest}
@@ -43,12 +43,16 @@ function SelectRequest({request, setRequest, selectRequestOptions}: PropTypes) {
         control={control}
         resetField={resetField}
         />
-    </Suspense> : 
+    </Suspense> : request === "mix" ? 
     <Suspense>
         <Mixing
         setRequest={setRequest}
         />
-    </Suspense>
+    </Suspense> : request === "master" ? <Suspense>
+        <Mastering
+        setRequest={setRequest}
+        />
+    </Suspense> : null
 }
 
 export default SelectRequest;
