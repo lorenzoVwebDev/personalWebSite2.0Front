@@ -8,6 +8,19 @@
   border-radius: unset;
   height: 100%; 
   transition: width 1s ease;
+  
+  & input[type=text] {
+    padding-left: 0.2rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    outline: none;
+    border: none;
+  }
+
+  & input[type=text]:focus {
+    outline: none;
+    border: none;
+  }
   & .bottom-button {
     width: 100%;
     background-color: green;
@@ -36,6 +49,17 @@
     justify-content: top;
     align-items: center; */
     //gap: calc(1vw + 1vh);
+    & .mastering-references-ctnr {
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      justify-content: center;
+      
+      & label {
+        color: white;
+      }
+    }
+
     & hr {
       width: 100%;
     }

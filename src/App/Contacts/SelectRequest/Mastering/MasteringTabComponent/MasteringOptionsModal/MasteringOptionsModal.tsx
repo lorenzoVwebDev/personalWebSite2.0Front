@@ -12,6 +12,9 @@ type PropTypes = {
     tabType:  "low" | "balanced" | "high"
 }
 
+const youtubeUrlPattern = /^(https?:\/\/)?(www\.)?(youtube\.com\/watch\?v=[\w-]+|youtu\.be\/([\w-]+))(?:[?&][^\s]*)?$/i
+const weTransferUrlPattern = /^(https?:\/\/)?(www\.)?(we\.tl\/t-[\w-]+|wetransfer\.com\/.+)$/i
+
 const options = [
     {
         title: "Extra-fast 1-day delivery",
@@ -73,9 +76,27 @@ function MasteringOptionsModal({ setOpenModal, openModal, tabType}: PropTypes) {
                     <Typography variant="h5" color="white">{String(tabType).toUpperCase()}</Typography>
                 </Box>
                 <Typography color="white">
-                    {String(tabType).toUpperCase()} master for your song.
+                    {String(tabType).toUpperCase()} frequencies oriented master for your song.
                 </Typography>
                 <hr />
+                <Box component="div" className="mastering-wetransfer-link">
+                    <Typography variant="h5" color="white">Add Your Wav File Link Here (only weTransfer links allowed)</Typography>
+                    <label htmlFor="wetransfer-link"></label>
+                    <input {...register("wetransfer_link", { required: true, pattern: weTransferUrlPattern, value: "https://we.tl/t-EpCuGKXtjMgwucjW" })} type="text" id="wetransfer-link" placeholder="*" 
+                    />
+                </Box>
+                <hr />
+                <Box component="div" className="mastering-references-ctnr">
+                    <Typography variant="h5" color="white">
+                        Add your reference songs (only youtube links)
+                    </Typography>
+                    <label htmlFor="master-reference-1" style={{color: "white"}}>Reference Song 1</label>
+                    <input {...register("master_reference_1", { required: false, pattern: youtubeUrlPattern })} type="text" id="master-reference-1" />
+                    <label htmlFor="master-reference-2">Reference Song 2</label>
+                    <input {...register("master_reference_2", { required: false, pattern: youtubeUrlPattern })} type="text" id="master-reference-2"/>
+                    <label htmlFor="master-reference-3">Reference Song 3</label>
+                    <input {...register("master_reference_3", { required: false, pattern: youtubeUrlPattern })} type="text" id="master-reference-3"/>
+                </Box>
                 <Box component="div" sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem" }}>
                     <Typography sx={{ width: "100%" }} align="left" color="white">
                         Upgrade your order with extras
