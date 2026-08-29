@@ -1,4 +1,7 @@
 import NeonButton from "@common/NeonButton/NeonButton"
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
+import { Modal } from '@mui/material';
 import { useFormContext, Controller  } from "react-hook-form";
 import { Checkbox, Typography,  Box, Button, Icon} from '@mui/material';
 import sendContacts from"@services/sendContacts"
@@ -69,10 +72,18 @@ const options = [
 ];
 
 function MixOptionsModal({setOpenModal, openModal, tabType, price, trackNumber, days}: PropTypes) {
-    const {control, handleSubmit, register} =useFormContext()  
+    const navigate = useNavigate()
+    const [responseStatus, setResponseStatus] = useState< null | number>(null)
+    const {control, handleSubmit, register} = useFormContext()  
     const array = Array.from("len")
+    
+    useEffect(() => {
+      if (responseStatus >= 300 && responseStatus != null) throw new Error()
+        
+    }, [responseStatus])
 
-  return ((
+  return (
+            <>
               <Box className="devport-infomodal-ctnr-total">
                 <div style={{display: "none"}}>
                   <input {...register("mix_type", {required: true, value: tabType})} type="text"/>
@@ -146,7 +157,12 @@ function MixOptionsModal({setOpenModal, openModal, tabType, price, trackNumber, 
                 </Box>
                 </div>
                 <NeonButton
-                  action={handleSubmit((data) => sendContacts(data))}
+                  action={handleSubmit(async (data) => {
+                    const responseStatus = await sendContacts(data)
+                    
+                      setResponseStatus(responseStatus)
+
+                  })}
                   buttonText="Request Your Mix"
                   classString="btn2"
                   style={{
@@ -159,9 +175,32 @@ function MixOptionsModal({setOpenModal, openModal, tabType, price, trackNumber, 
                   <img src={`${import.meta.env.VITE_DEV_API}images/lwd-image.webp`} alt="" fetchPriority='high' />
                 </div>
               </Box>
-            )
-          
-  )
+              <Modal
+                open={responseStatus === 200 && true}
+              >
+                <Box
+                  sx={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "40%",
+                    border: "solid black 3px",
+                    backgroundColor: "white",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center"
+                  }}
+                >
+                  <p>Thank you so much for requesting a mix from me!</p>
+                  <p>You'll receive an email with further instructions in short time!</p>
+                  <button style={{color: "red", cursor: "pointer"}} onClick={() => {
+                    setResponseStatus(null)
+                    navigate("/")
+                    }}>X</button>
+                </Box>
+              </Modal>
+            </>
+              )
 }
 
 export default MixOptionsModal

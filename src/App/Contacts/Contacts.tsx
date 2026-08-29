@@ -35,15 +35,16 @@ function Contacts() {
     // const { register, handleSubmit, control, resetField } = useForm<ContactsInterface>()
     const reactFormMethods = useForm<ContactsInterface>()
     const [request, setRequest] = useState<null | string>(null)
+    const [responseStatus, setResponseStatus] = useState<null | number>(null)
 
   return <>
   <div className="contacts-container">
     <div className="contacts-form-container">
       <h1>Insert your data</h1>
       <FormProvider {...reactFormMethods}>
-        <form onSubmit={reactFormMethods.handleSubmit((data) => {
+        <form onSubmit={reactFormMethods.handleSubmit(async (data) => {
           console.log(data)
-          sendContacts(data)
+          setResponseStatus(await sendContacts(data));
         })} encType='multipart/form-data'>
           {/*name, last-name, email*/}
           <div className="contacts-form-name-container">
@@ -65,7 +66,7 @@ function Contacts() {
             <textarea {...reactFormMethods.register("comment", {required: false, maxLength: 300, pattern: noHtmlRegexp})} placeholder='Additional Information'>
             </textarea>
           </div>
-          {request === "mix" ? null : <button type="submit">{request == null ? "Send Contacts" : "Send Your Song Request"}</button>}
+          {request === "mix" || request === "master" ? null : <button type="submit">{request == null ? "Send Contacts" : "Send Your Song Request"}</button>}
         </form>
       </FormProvider>
     </div>

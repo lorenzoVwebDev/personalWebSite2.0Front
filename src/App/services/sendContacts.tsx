@@ -7,7 +7,7 @@ interface DataInterface {
     comment?: string
 }
 //
-async function sendContacts(data: FieldValues): Promise<boolean> {
+async function sendContacts(data: FieldValues): Promise<number> {
     const alphaRegexp = /^[A-Za-z]+$/;
     const emailRegexp = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
     
@@ -26,11 +26,7 @@ async function sendContacts(data: FieldValues): Promise<boolean> {
         cache: "no-store"
     })
 
-    if (response.ok) {
-        return true
-    } else {
-        return false
-    }
+    return response.status
 }
 
 export default sendContacts;
