@@ -1,6 +1,6 @@
 import { useFormContext } from 'react-hook-form'
 import TabComponent from './TabComponent/TabComponent'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import './Mixing.scss'
 
 type PropTypes = {

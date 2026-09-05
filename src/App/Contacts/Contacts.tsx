@@ -1,8 +1,11 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import { useForm, FormProvider} from "react-hook-form"
-import { useRef, useState } from 'react';
 //components
 import SelectRequest from "./SelectRequest/SelectRequest";
 import sendContacts from '../services/sendContacts';
+import { Modal } from '@mui/material';
+import { Box} from '@mui/material';
 import './Contacts.scss';
 //regexp
 const emailRegexp = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
@@ -32,10 +35,18 @@ const selectRequestOptions: string[] = [
 ];
 
 function Contacts() {
+    const navigate = useNavigate()
+    const [responseObj, setResponseObj] = useState< null | {response: string, status: number}>(null)
     // const { register, handleSubmit, control, resetField } = useForm<ContactsInterface>()
     const reactFormMethods = useForm<ContactsInterface>()
     const [request, setRequest] = useState<null | string>(null)
     const [responseStatus, setResponseStatus] = useState<null | number>(null)
+
+    useEffect(() => {
+      if (responseObj == null) return 
+      if (responseObj.status >= 300 && responseObj.status <= 500) throw new Error(JSON.stringify(responseObj))
+     
+    }, [responseObj])
 
   return <>
   <div className="contacts-container">
@@ -43,9 +54,9 @@ function Contacts() {
       <h1>Insert your data</h1>
       <FormProvider {...reactFormMethods}>
         <form onSubmit={reactFormMethods.handleSubmit(async (data) => {
-          console.log(data)
-          setResponseStatus(await sendContacts(data));
-        })} encType='multipart/form-data'>
+            const responseObj = await sendContacts(data)
+            setResponseObj(responseObj)
+          })} encType='multipart/form-data'>
           {/*name, last-name, email*/}
           <div className="contacts-form-name-container">
             <input {...reactFormMethods.register("first_name", {required: true, maxLength: 20, pattern: alphaRegexp, value: "Lorenzo"})} 
@@ -75,6 +86,30 @@ function Contacts() {
       <img src={`${import.meta.env.VITE_DEV_API}images/lwd-image.webp`} alt="" />
     </div>
   </div>
+      <Modal
+        open={responseObj?.status === 200 && true}
+      >
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "40%",
+            border: "solid black 3px",
+            backgroundColor: "white",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center"
+          }}
+        >
+          <p>Thank you so much for requesting a {request === null ? "contact" : request}!</p>
+          <p>You'll receive an email with further instructions in short time!</p>
+          <button style={{color: "red", cursor: "pointer"}} onClick={() => {
+            setResponseObj(null)
+            navigate("/")
+          }}>X</button>
+      </Box>
+    </Modal>
   </>
 }
 

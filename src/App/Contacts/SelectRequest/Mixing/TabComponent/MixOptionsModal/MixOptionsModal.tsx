@@ -1,13 +1,16 @@
-import NeonButton from "@common/NeonButton/NeonButton"
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import { Modal } from '@mui/material';
 import { useFormContext, Controller  } from "react-hook-form";
+//Components
+import NeonButton from "@common/NeonButton/NeonButton"
+import { Modal } from '@mui/material';
 import { Checkbox, Typography,  Box, Button, Icon} from '@mui/material';
+import { RxMixerVertical, RxMixerHorizontal } from "react-icons/rx";
+//Services
 import sendContacts from"@services/sendContacts"
 import "./MixOptionsModal.scss"
-//react-icons
-import { RxMixerVertical, RxMixerHorizontal } from "react-icons/rx";
+
+
 
 
 type PropTypes = {
@@ -73,14 +76,15 @@ const options = [
 
 function MixOptionsModal({setOpenModal, openModal, tabType, price, trackNumber, days}: PropTypes) {
     const navigate = useNavigate()
-    const [responseStatus, setResponseStatus] = useState< null | number>(null)
+    const [responseObj, setResponseObj] = useState< null | {response: string, status: number}>(null)
     const {control, handleSubmit, register} = useFormContext()  
     const array = Array.from("len")
     
     useEffect(() => {
-      if (responseStatus >= 300 && responseStatus != null) throw new Error()
-        
-    }, [responseStatus])
+      if (responseObj == null) return 
+     if (responseObj.status >= 300 && responseObj.status <= 500) throw new Error(JSON.stringify(responseObj))
+     
+    }, [responseObj])
 
   return (
             <>
@@ -158,9 +162,9 @@ function MixOptionsModal({setOpenModal, openModal, tabType, price, trackNumber, 
                 </div>
                 <NeonButton
                   action={handleSubmit(async (data) => {
-                    const responseStatus = await sendContacts(data)
+                    const responseObj = await sendContacts(data)
                     
-                      setResponseStatus(responseStatus)
+                      setResponseObj(responseObj)
 
                   })}
                   buttonText="Request Your Mix"
@@ -176,7 +180,7 @@ function MixOptionsModal({setOpenModal, openModal, tabType, price, trackNumber, 
                 </div>
               </Box>
               <Modal
-                open={responseStatus === 200 && true}
+                open={responseObj?.status === 200 && true}
               >
                 <Box
                   sx={{
@@ -191,10 +195,10 @@ function MixOptionsModal({setOpenModal, openModal, tabType, price, trackNumber, 
                     alignItems: "center"
                   }}
                 >
-                  <p>Thank you so much for requesting a mix from me!</p>
+                  <p>Thank you so much for requesting a mix!</p>
                   <p>You'll receive an email with further instructions in short time!</p>
                   <button style={{color: "red", cursor: "pointer"}} onClick={() => {
-                    setResponseStatus(null)
+                    setResponseObj(null)
                     navigate("/")
                     }}>X</button>
                 </Box>

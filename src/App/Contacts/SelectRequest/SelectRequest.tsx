@@ -16,7 +16,7 @@ type PropTypes = {
 }
 
 function SelectRequest({request, setRequest, selectRequestOptions}: PropTypes) {
-    const {register, control, resetField} = useFormContext()
+    const {register} = useFormContext()
 
     return request == null ? 
         <><h2>What do you need?</h2>
@@ -39,9 +39,6 @@ function SelectRequest({request, setRequest, selectRequestOptions}: PropTypes) {
     <Suspense>
         <SongProduction
         setRequest={setRequest}
-        register={register}
-        control={control}
-        resetField={resetField}
         />
     </Suspense> : request === "mix" ? 
     <Suspense>

@@ -1,4 +1,5 @@
 import { Error400 } from "./Error400";
+import { Error500 } from "./Error500";
 import {
   isRouteErrorResponse,
   useRouteError,
@@ -10,7 +11,10 @@ type PropTypes = {
 };
 
 export function ErrorBoundary() {
-  const error = useRouteError()
-    console.log(error) 
-    return <Error400/>
+  const errorJson = useRouteError()
+
+  const errorObj = JSON.parse(errorJson?.message)
+
+  if (errorObj >= 400 && errorObj.status < 500) return <Error400/>
+  else if (errorObj.status >= 500) return <Error500/>
 }

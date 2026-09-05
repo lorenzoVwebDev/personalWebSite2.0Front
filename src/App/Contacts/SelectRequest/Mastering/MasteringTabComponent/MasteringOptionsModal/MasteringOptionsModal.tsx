@@ -1,10 +1,15 @@
-import NeonButton from "@common/NeonButton/NeonButton"
+//hooks
+import { useState, useEffect } from "react"
+import { useNavigate } from "react-router";
 import { useFormContext, Controller } from "react-hook-form"
+//Components
+import NeonButton from "@common/NeonButton/NeonButton"
+import { Modal } from '@mui/material';
 import { Checkbox, Typography, Box, Button, Icon } from '@mui/material'
 import sendContacts from "@services/sendContacts"
-import "./MasteringOptionsModal.scss"
-//react-icons
 import { RxMixerVertical, RxMixerHorizontal } from "react-icons/rx"
+//Scss
+import "./MasteringOptionsModal.scss"
 
 type PropTypes = {
     setOpenModal: React.Dispatch<React.SetStateAction<boolean>>
@@ -49,10 +54,19 @@ const options = [
 ]
 
 function MasteringOptionsModal({ setOpenModal, openModal, tabType}: PropTypes) {
+    const navigate = useNavigate()
     const { control, handleSubmit, register } = useFormContext()
-    const array = Array.from("len")
+    const [responseObj, setResponseObj] = useState< null | {response: string, status: number}>(null)
+    const array = Array.from("len");
+
+    useEffect(() => {
+      if (responseObj == null) return 
+     if (responseObj.status >= 300 && responseObj.status <= 500) throw new Error(JSON.stringify(responseObj))
+     
+    }, [responseObj])
 
     return (
+        <>
         <Box className="devport-infomodal-ctnr-total">
             <div style={{ display: "none" }}>
                 <input {...register("mastering_type", { required: true, value: tabType })} type="text" />
@@ -120,7 +134,10 @@ function MasteringOptionsModal({ setOpenModal, openModal, tabType}: PropTypes) {
                 </Box>
             </div>
             <NeonButton
-                action={handleSubmit((data) => sendContacts(data))}
+                action={handleSubmit(async (data) => {
+                    const responseObj = await sendContacts(data)         
+                    setResponseObj(responseObj)
+                })}
                 buttonText="Request Your Mastering"
                 classString="btn2"
                 style={{ width: "100%", height: "5%", marginTop: "0rem" }}
@@ -130,6 +147,31 @@ function MasteringOptionsModal({ setOpenModal, openModal, tabType}: PropTypes) {
                 <img src={`${import.meta.env.VITE_DEV_API}images/lwd-image.webp`} alt="" fetchPriority="high" />
             </div>
         </Box>
+              <Modal
+                open={responseObj?.status === 200 && true}
+              >
+                <Box
+                  sx={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "40%",
+                    border: "solid black 3px",
+                    backgroundColor: "white",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center"
+                  }}
+                >
+                  <p>Thank you so much for requesting a mastering!</p>
+                  <p>You'll receive an email with further instructions in short time!</p>
+                  <button style={{color: "red", cursor: "pointer"}} onClick={() => {
+                    setResponseObj(null)
+                    navigate("/")
+                    }}>X</button>
+                </Box>
+              </Modal>
+              </>
     )
 }
 
